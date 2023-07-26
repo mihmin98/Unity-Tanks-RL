@@ -22,6 +22,7 @@ public class TankMovement : MonoBehaviour
     private float m_OriginalPitch;              // The pitch of the audio source at the start of the scene.
     private int m_numFramesAlive;               // The number of frames that the agent is alive
     bool m_IsAI = false;
+    bool m_ManualInput = true;
     public void SetAsAI() { m_IsAI = true; }
 
     Vector3 m_lastMove;
@@ -77,9 +78,12 @@ public class TankMovement : MonoBehaviour
         }
         else // Human
         {
-            // Store the value of both input axes.
-            m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
-            m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
+            if (m_ManualInput)
+            {
+                // Store the value of both input axes.
+                m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
+                m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
+            }
         }
 
         float alpha = UtilsGeneral.lerp(m_numFramesAlive, 0.0f, 9.0f, 0.0f, 0.95f); // In the beggining, take into account more the instant vel rather than history
@@ -219,4 +223,12 @@ public class TankMovement : MonoBehaviour
         Quaternion turnRotation = Quaternion.Euler(0, angleToApply, 0);
         m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
     }
+
+    public void SetManualInput(bool value)
+    {
+        m_ManualInput = value;
+    }
+
+    public void SetMovementValue(float value) { m_MovementInputValue = Mathf.Clamp(value, -1f, 1f); }
+    public void SetTurningValue(float value) { m_TurnInputValue = Mathf.Clamp(value, -1f, 1f); }
 }

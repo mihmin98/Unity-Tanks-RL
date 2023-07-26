@@ -1,0 +1,119 @@
+{
+    "move_to_static_target_04": {
+        "checkpoints": [
+            {
+                "steps": 499986,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-499986.onnx",
+                "reward": -55.48489295111762,
+                "creation_time": 1686119811.867947,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-499986.pt"
+                ]
+            },
+            {
+                "steps": 999982,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-999982.onnx",
+                "reward": -55.42582339428841,
+                "creation_time": 1686120493.3751407,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-999982.pt"
+                ]
+            },
+            {
+                "steps": 1499982,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-1499982.onnx",
+                "reward": -55.42412270818438,
+                "creation_time": 1686121178.5745907,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-1499982.pt"
+                ]
+            },
+            {
+                "steps": 1999998,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-1999998.onnx",
+                "reward": -55.422396611685706,
+                "creation_time": 1686121859.8372433,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-1999998.pt"
+                ]
+            },
+            {
+                "steps": 2499998,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-2499998.onnx",
+                "reward": -55.41963979520686,
+                "creation_time": 1686122541.5665312,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-2499998.pt"
+                ]
+            },
+            {
+                "steps": 2999994,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-2999994.onnx",
+                "reward": -55.426221131199625,
+                "creation_time": 1686123223.8266513,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-2999994.pt"
+                ]
+            },
+            {
+                "steps": 3499994,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-3499994.onnx",
+                "reward": -55.4174634795828,
+                "creation_time": 1686123908.8337803,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-3499994.pt"
+                ]
+            },
+            {
+                "steps": 3999986,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-3999986.onnx",
+                "reward": -55.358038495470595,
+                "creation_time": 1686124594.2919912,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-3999986.pt"
+                ]
+            },
+            {
+                "steps": 4499986,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-4499986.onnx",
+                "reward": -55.42343473033745,
+                "creation_time": 1686125279.9957829,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-4499986.pt"
+                ]
+            },
+            {
+                "steps": 4999982,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-4999982.onnx",
+                "reward": -55.423277313644824,
+                "creation_time": 1686125968.1772356,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-4999982.pt"
+                ]
+            },
+            {
+                "steps": 5035402,
+                "file_path": "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-5035402.onnx",
+                "reward": -55.423074595133464,
+                "creation_time": 1686126016.3837078,
+                "auxillary_file_paths": [
+                    "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-5035402.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5035402,
+            "file_path": "results/move_to_static_target_04/move_to_static_target_04.onnx",
+            "reward": -55.423074595133464,
+            "creation_time": 1686126016.3837078,
+            "auxillary_file_paths": [
+                "results/move_to_static_target_04/move_to_static_target_04/move_to_static_target_04-5035402.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

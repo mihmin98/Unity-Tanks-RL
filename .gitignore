@@ -8,6 +8,7 @@
 [Bb]uild
 [Ll]ibrary/
 [Ll]ogs/
+Logs/*.log
 sysinfo.txt
 *.stackdump
  
@@ -37,3 +38,6 @@ ehthumbs.db
 [Tt]humbs.db
 
 Recordings/*
+
+# ML
+*.pt

@@ -1,7 +1,11 @@
 {
     "name": "AllGameScriptsAsm",
-    "references": [],
-    "optionalUnityReferences": [],
+    "rootNamespace": "",
+    "references": [
+        "GUID:85e0054f8e64b47309646d35f8851f81",
+        "GUID:0234213bbb9574f66bb4d93920cc6bb7",
+        "GUID:5c2b5ba89f9e74e418232e154bc5cc7a"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [
         "LinuxStandalone64",
@@ -11,5 +15,7 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -1,0 +1,208 @@
+move_to_static_target_01:
+    se blocheaza pe la -25
+    probabil nu are destui neuroni sa invete mai mult
+    time: 3.04 ore
+    
+    mlagents-learn --run-id move_to_static_target_01 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_01.log
+
+
+move_to_static_target_02:
+    cresc nr de neuroni la 256, dar pastrez doar 1 strat
+
+    se blocheaza la -27, tot nu are destui neuroni
+
+    mlagents-learn --run-id move_to_static_target_02 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_02.log
+
+
+move_to_static_target_03:
+    512 neuroni, 1 strat
+
+    l-am oprite devreme ca doar se invartea intr-o bucla
+
+    mlagents-learn --run-id move_to_static_target_03 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_03.log
+
+move_to_static_target_04:
+    512 neuroni, 1 strat cu curiosity
+    il las putin sa mearga, daca iar se blocheaza aiaie e reteaua prea naspa
+    iar s-a blocat, ayaye go next, nu merge nici cu curioisty (sau poate e aia de curiosity prea mica?)
+
+    mlagents-learn --run-id move_to_static_target_04 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_04.log
+
+move_to_static_target_05:
+    cresc reteaua de curiosity la 3 layers x 256
+    ramane nemiscat deci tot nu merge
+
+    mlagents-learn --run-id move_to_static_target_05 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_05.log
+
+
+move_to_static_target_06:
+    3 layer x 128 unit, no curiosity
+    se blocheaza pe la -25, se invarte in jurul spatiului, dar nu are tendindte sa mearga spre target
+    daca la 3 x 128 am rezultat asa naspa, clar la 2 x 128 o sa fie si mai prost
+
+    mlagents-learn --run-id move_to_static_target_06 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_06.log
+
+
+move_to_static_target_07:
+    3 layer x 128 unit, with curiosity
+    se plimba dar nu prea atinge obiectivu
+    se blocheaza pe la -26
+
+    mlagents-learn --run-id move_to_static_target_07 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_07.log
+
+
+move_to_static_target_08:
+    3 layer x 128 unit, with curiosity & sa bag acelasi seed pt generatoru de numere random care schimba spawnurile, poate ajuta la antrenare
+    config same as 07
+
+
+
+    mlagents-learn --run-id move_to_static_target_08 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_08.log
+
+
+move_to_static_target_09:
+    3 x 128, curiosity, sa trebuiasca ca agentu sa atinga obiectivu de 30 de ori pana incepe sa isi schimbe pozitia random
+    config same as 08
+
+    first success, chiar incepe sa mearga dupa tinte
+
+    mlagents-learn --run-id move_to_static_target_09 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_09.log
+
+
+
+move_to_static_target_10:
+    3 x 128, curiosity, sa atinga de 30 de ori
+    decrease learningrate: 0.0003 -> 0.0001
+
+    nu merge, nu reuseste sa treaca de 0 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_10 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_10.log
+
+
+
+move_to_static_target_11:
+    3 x 256, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+
+    n-a reusit sa treaca de reward 0
+
+    mlagents-learn --run-id move_to_static_target_11 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_11.log
+
+
+move_to_static_target_12:
+    3 x 128, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.6 mil
+    muuuuult mai bine, ajunge pe la 150 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_12 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_12.log
+
+
+move_to_static_target_13:
+    3 x 256, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.1 mil
+    tot pe la 150 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_13 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_13.log
+
+
+
+move_to_static_target_14:
+    3 x 512, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.2 mil
+    ajunge pe la ~120 mean_reward, deci probabil e ceva mai naspa decat 3x128 sau 3x256, probabil pt ca ar trebui sa se antreneze mai mult
+
+    mlagents-learn --run-id move_to_static_target_14 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_14.log
+
+
+move_to_static_target_15:
+    5 x 128, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.2 mil
+    tot pe la 140 mean_reward ajunge
+
+    mlagents-learn --run-id move_to_static_target_15 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_15.log
+
+
+move_to_static_target_16:
+    5 x 256, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.1 mil
+    ajunge la 110 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_16 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_16.log
+
+
+move_to_static_target_17:
+    5 x 512, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.8 mil
+    150 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_17 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_17.log
+
+
+move_to_static_target_18:
+    7 x 128, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 0.75 mil steps
+    125 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_18 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_18.log
+
+
+move_to_static_target_19:
+    7 x 256, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 1.25 milx
+    125 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_19 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_19.log
+
+
+move_to_static_target_20:
+    7 x 512, curiosity, sa atinga de 30 de ori
+    learningrate: 0.0003
+    !! scot pozitiile de la observatii !!
+
+    ajunge la 0 la 2.4 mil
+    100 mean_reward
+
+    mlagents-learn --run-id move_to_static_target_20 --time-scale 20 move_to_static_target.yaml 2>&1 | tee results/move_to_static_target_20.log
+
+
+======================================
+
+
+
+probleme gasite:
+    ca sa vad daca nu se misca nu e suficient sa verific aia cu velocity, tre sa verific si pozitia, ca altfel are tendinta sa se duca intr-un perete invizibil si sa aiba velocity dar pozitia sa raana identinca
+    sa ii adaug curiosity rewards ca sa nu ramana blocat intr-o bucla
+    sa il fac sa dea fail daca se misca in cerc
+
+    maybe use localPosition instead of position
+
+
+
+ca evaluare a modelelor
+
+o sa trebuiasca sa ating 50 de tinte care apar in aceeasi ordine, adica au acelasi seed, la inceput manual (human player) si dupa cu modelele antrenate
+si performanta e cat de repede ajung sa ating cele 50 de tinte

@@ -1,0 +1,289 @@
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+        
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 1.13.1+cu117
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.3.0-exp.3 and communication version 1.5.0
+[INFO] Connected new brain: move_to_static_target_01?team=0
+[INFO] Hyperparameters for behavior name move_to_static_target_01: 
+	trainer_type:	ppo
+	hyperparameters:	
+	  batch_size:	256
+	  buffer_size:	8192
+	  learning_rate:	0.0003
+	  beta:	0.005
+	  epsilon:	0.2
+	  lambd:	0.95
+	  num_epoch:	3
+	  shared_critic:	False
+	  learning_rate_schedule:	linear
+	  beta_schedule:	linear
+	  epsilon_schedule:	linear
+	network_settings:	
+	  normalize:	False
+	  hidden_units:	128
+	  num_layers:	1
+	  vis_encode_type:	simple
+	  memory:	None
+	  goal_conditioning_type:	hyper
+	  deterministic:	False
+	reward_signals:	
+	  extrinsic:	
+	    gamma:	0.9
+	    strength:	1.0
+	    network_settings:	
+	      normalize:	False
+	      hidden_units:	128
+	      num_layers:	2
+	      vis_encode_type:	simple
+	      memory:	None
+	      goal_conditioning_type:	hyper
+	      deterministic:	False
+	init_path:	None
+	keep_checkpoints:	100
+	checkpoint_interval:	500000
+	max_steps:	10000000
+	time_horizon:	256
+	summary_freq:	50000
+	threaded:	False
+	self_play:	None
+	behavioral_cloning:	None
+[INFO] move_to_static_target_01. Step: 50000. Time Elapsed: 68.002 s. Mean Reward: -69.246. Std of Reward: 79.399. Training.
+[INFO] move_to_static_target_01. Step: 100000. Time Elapsed: 121.297 s. Mean Reward: -90.664. Std of Reward: 80.840. Training.
+[INFO] move_to_static_target_01. Step: 150000. Time Elapsed: 180.022 s. Mean Reward: -81.101. Std of Reward: 43.863. Training.
+[INFO] move_to_static_target_01. Step: 200000. Time Elapsed: 231.830 s. Mean Reward: -54.533. Std of Reward: 12.265. Training.
+[INFO] move_to_static_target_01. Step: 250000. Time Elapsed: 289.685 s. Mean Reward: -66.376. Std of Reward: 25.835. Training.
+[INFO] move_to_static_target_01. Step: 300000. Time Elapsed: 345.933 s. Mean Reward: -53.414. Std of Reward: 9.725. Training.
+[INFO] move_to_static_target_01. Step: 350000. Time Elapsed: 404.539 s. Mean Reward: -56.940. Std of Reward: 46.004. Training.
+[INFO] move_to_static_target_01. Step: 400000. Time Elapsed: 455.386 s. Mean Reward: -59.729. Std of Reward: 45.143. Training.
+[INFO] move_to_static_target_01. Step: 450000. Time Elapsed: 510.930 s. Mean Reward: -49.621. Std of Reward: 11.476. Training.
+[INFO] move_to_static_target_01. Step: 500000. Time Elapsed: 564.096 s. Mean Reward: -54.089. Std of Reward: 24.457. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-499840.onnx
+[INFO] move_to_static_target_01. Step: 550000. Time Elapsed: 618.166 s. Mean Reward: -52.878. Std of Reward: 33.070. Training.
+[INFO] move_to_static_target_01. Step: 600000. Time Elapsed: 675.962 s. Mean Reward: -56.795. Std of Reward: 32.361. Training.
+[INFO] move_to_static_target_01. Step: 650000. Time Elapsed: 728.127 s. Mean Reward: -47.942. Std of Reward: 16.166. Training.
+[INFO] move_to_static_target_01. Step: 700000. Time Elapsed: 786.587 s. Mean Reward: -46.629. Std of Reward: 26.814. Training.
+[INFO] move_to_static_target_01. Step: 750000. Time Elapsed: 840.079 s. Mean Reward: -48.220. Std of Reward: 17.765. Training.
+[INFO] move_to_static_target_01. Step: 800000. Time Elapsed: 895.314 s. Mean Reward: -49.567. Std of Reward: 24.273. Training.
+[INFO] move_to_static_target_01. Step: 850000. Time Elapsed: 948.144 s. Mean Reward: -44.683. Std of Reward: 13.712. Training.
+[INFO] move_to_static_target_01. Step: 900000. Time Elapsed: 1004.748 s. Mean Reward: -53.756. Std of Reward: 42.859. Training.
+[INFO] move_to_static_target_01. Step: 950000. Time Elapsed: 1058.136 s. Mean Reward: -47.815. Std of Reward: 25.312. Training.
+[INFO] move_to_static_target_01. Step: 1000000. Time Elapsed: 1113.561 s. Mean Reward: -54.186. Std of Reward: 52.607. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-999888.onnx
+[INFO] move_to_static_target_01. Step: 1050000. Time Elapsed: 1169.530 s. Mean Reward: -40.339. Std of Reward: 10.892. Training.
+[INFO] move_to_static_target_01. Step: 1100000. Time Elapsed: 1222.030 s. Mean Reward: -40.349. Std of Reward: 11.468. Training.
+[INFO] move_to_static_target_01. Step: 1150000. Time Elapsed: 1278.479 s. Mean Reward: -40.951. Std of Reward: 14.002. Training.
+[INFO] move_to_static_target_01. Step: 1200000. Time Elapsed: 1329.670 s. Mean Reward: -36.524. Std of Reward: 9.104. Training.
+[INFO] move_to_static_target_01. Step: 1250000. Time Elapsed: 1391.248 s. Mean Reward: -37.961. Std of Reward: 10.884. Training.
+[INFO] move_to_static_target_01. Step: 1300000. Time Elapsed: 1446.090 s. Mean Reward: -36.338. Std of Reward: 9.102. Training.
+[INFO] move_to_static_target_01. Step: 1350000. Time Elapsed: 1505.724 s. Mean Reward: -35.687. Std of Reward: 8.747. Training.
+[INFO] move_to_static_target_01. Step: 1400000. Time Elapsed: 1559.314 s. Mean Reward: -33.736. Std of Reward: 7.804. Training.
+[INFO] move_to_static_target_01. Step: 1450000. Time Elapsed: 1616.925 s. Mean Reward: -31.644. Std of Reward: 6.430. Training.
+[INFO] move_to_static_target_01. Step: 1500000. Time Elapsed: 1671.388 s. Mean Reward: -33.589. Std of Reward: 8.646. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-1499960.onnx
+[INFO] move_to_static_target_01. Step: 1550000. Time Elapsed: 1725.480 s. Mean Reward: -31.164. Std of Reward: 7.898. Training.
+[INFO] move_to_static_target_01. Step: 1600000. Time Elapsed: 1782.849 s. Mean Reward: -30.536. Std of Reward: 7.162. Training.
+[INFO] move_to_static_target_01. Step: 1650000. Time Elapsed: 1834.960 s. Mean Reward: -30.294. Std of Reward: 5.941. Training.
+[INFO] move_to_static_target_01. Step: 1700000. Time Elapsed: 1891.281 s. Mean Reward: -29.584. Std of Reward: 4.569. Training.
+[INFO] move_to_static_target_01. Step: 1750000. Time Elapsed: 1942.802 s. Mean Reward: -30.325. Std of Reward: 6.770. Training.
+[INFO] move_to_static_target_01. Step: 1800000. Time Elapsed: 2000.120 s. Mean Reward: -28.547. Std of Reward: 4.262. Training.
+[INFO] move_to_static_target_01. Step: 1850000. Time Elapsed: 2055.166 s. Mean Reward: -27.870. Std of Reward: 3.438. Training.
+[INFO] move_to_static_target_01. Step: 1900000. Time Elapsed: 2115.229 s. Mean Reward: -28.504. Std of Reward: 4.831. Training.
+[INFO] move_to_static_target_01. Step: 1950000. Time Elapsed: 2166.748 s. Mean Reward: -28.430. Std of Reward: 3.547. Training.
+[INFO] move_to_static_target_01. Step: 2000000. Time Elapsed: 2222.012 s. Mean Reward: -29.095. Std of Reward: 5.509. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-1999800.onnx
+[INFO] move_to_static_target_01. Step: 2050000. Time Elapsed: 2276.519 s. Mean Reward: -28.151. Std of Reward: 3.931. Training.
+[INFO] move_to_static_target_01. Step: 2100000. Time Elapsed: 2334.029 s. Mean Reward: -28.554. Std of Reward: 3.916. Training.
+[INFO] move_to_static_target_01. Step: 2150000. Time Elapsed: 2393.179 s. Mean Reward: -28.332. Std of Reward: 3.632. Training.
+[INFO] move_to_static_target_01. Step: 2200000. Time Elapsed: 2447.191 s. Mean Reward: -28.346. Std of Reward: 3.699. Training.
+[INFO] move_to_static_target_01. Step: 2250000. Time Elapsed: 2504.187 s. Mean Reward: -28.172. Std of Reward: 3.605. Training.
+[INFO] move_to_static_target_01. Step: 2300000. Time Elapsed: 2556.183 s. Mean Reward: -28.667. Std of Reward: 4.601. Training.
+[INFO] move_to_static_target_01. Step: 2350000. Time Elapsed: 2614.342 s. Mean Reward: -30.172. Std of Reward: 10.756. Training.
+[INFO] move_to_static_target_01. Step: 2400000. Time Elapsed: 2671.233 s. Mean Reward: -32.084. Std of Reward: 15.073. Training.
+[INFO] move_to_static_target_01. Step: 2450000. Time Elapsed: 2727.105 s. Mean Reward: -28.281. Std of Reward: 3.014. Training.
+[INFO] move_to_static_target_01. Step: 2500000. Time Elapsed: 2780.300 s. Mean Reward: -27.936. Std of Reward: 2.332. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-2499824.onnx
+[INFO] move_to_static_target_01. Step: 2550000. Time Elapsed: 2834.843 s. Mean Reward: -28.728. Std of Reward: 3.329. Training.
+[INFO] move_to_static_target_01. Step: 2600000. Time Elapsed: 2889.771 s. Mean Reward: -29.016. Std of Reward: 7.434. Training.
+[INFO] move_to_static_target_01. Step: 2650000. Time Elapsed: 2942.422 s. Mean Reward: -28.654. Std of Reward: 3.378. Training.
+[INFO] move_to_static_target_01. Step: 2700000. Time Elapsed: 3000.739 s. Mean Reward: -27.980. Std of Reward: 2.940. Training.
+[INFO] move_to_static_target_01. Step: 2750000. Time Elapsed: 3053.828 s. Mean Reward: -27.543. Std of Reward: 2.680. Training.
+[INFO] move_to_static_target_01. Step: 2800000. Time Elapsed: 3113.710 s. Mean Reward: -27.604. Std of Reward: 2.783. Training.
+[INFO] move_to_static_target_01. Step: 2850000. Time Elapsed: 3167.425 s. Mean Reward: -27.221. Std of Reward: 2.491. Training.
+[INFO] move_to_static_target_01. Step: 2900000. Time Elapsed: 3226.252 s. Mean Reward: -27.175. Std of Reward: 3.593. Training.
+[INFO] move_to_static_target_01. Step: 2950000. Time Elapsed: 3279.040 s. Mean Reward: -27.719. Std of Reward: 4.902. Training.
+[INFO] move_to_static_target_01. Step: 3000000. Time Elapsed: 3334.680 s. Mean Reward: -26.970. Std of Reward: 2.328. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-2999752.onnx
+[INFO] move_to_static_target_01. Step: 3050000. Time Elapsed: 3388.515 s. Mean Reward: -29.454. Std of Reward: 7.763. Training.
+[INFO] move_to_static_target_01. Step: 3100000. Time Elapsed: 3441.967 s. Mean Reward: -34.528. Std of Reward: 24.983. Training.
+[INFO] move_to_static_target_01. Step: 3150000. Time Elapsed: 3498.785 s. Mean Reward: -27.119. Std of Reward: 1.922. Training.
+[INFO] move_to_static_target_01. Step: 3200000. Time Elapsed: 3551.486 s. Mean Reward: -27.051. Std of Reward: 1.927. Training.
+[INFO] move_to_static_target_01. Step: 3250000. Time Elapsed: 3609.816 s. Mean Reward: -26.818. Std of Reward: 1.947. Training.
+[INFO] move_to_static_target_01. Step: 3300000. Time Elapsed: 3662.816 s. Mean Reward: -26.748. Std of Reward: 2.020. Training.
+[INFO] move_to_static_target_01. Step: 3350000. Time Elapsed: 3721.866 s. Mean Reward: -26.641. Std of Reward: 1.936. Training.
+[INFO] move_to_static_target_01. Step: 3400000. Time Elapsed: 3776.275 s. Mean Reward: -26.493. Std of Reward: 1.447. Training.
+[INFO] move_to_static_target_01. Step: 3450000. Time Elapsed: 3835.938 s. Mean Reward: -26.881. Std of Reward: 2.088. Training.
+[INFO] move_to_static_target_01. Step: 3500000. Time Elapsed: 3888.430 s. Mean Reward: -26.652. Std of Reward: 1.904. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-3499816.onnx
+[INFO] move_to_static_target_01. Step: 3550000. Time Elapsed: 3945.570 s. Mean Reward: -26.882. Std of Reward: 2.690. Training.
+[INFO] move_to_static_target_01. Step: 3600000. Time Elapsed: 4000.314 s. Mean Reward: -26.696. Std of Reward: 2.224. Training.
+[INFO] move_to_static_target_01. Step: 3650000. Time Elapsed: 4056.002 s. Mean Reward: -26.650. Std of Reward: 2.302. Training.
+[INFO] move_to_static_target_01. Step: 3700000. Time Elapsed: 4112.995 s. Mean Reward: -26.749. Std of Reward: 2.279. Training.
+[INFO] move_to_static_target_01. Step: 3750000. Time Elapsed: 4164.581 s. Mean Reward: -26.732. Std of Reward: 2.633. Training.
+[INFO] move_to_static_target_01. Step: 3800000. Time Elapsed: 4221.655 s. Mean Reward: -26.741. Std of Reward: 2.526. Training.
+[INFO] move_to_static_target_01. Step: 3850000. Time Elapsed: 4273.905 s. Mean Reward: -26.989. Std of Reward: 2.664. Training.
+[INFO] move_to_static_target_01. Step: 3900000. Time Elapsed: 4328.753 s. Mean Reward: -26.713. Std of Reward: 1.984. Training.
+[INFO] move_to_static_target_01. Step: 3950000. Time Elapsed: 4382.521 s. Mean Reward: -26.801. Std of Reward: 2.329. Training.
+[INFO] move_to_static_target_01. Step: 4000000. Time Elapsed: 4440.152 s. Mean Reward: -26.751. Std of Reward: 2.430. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-3999792.onnx
+[INFO] move_to_static_target_01. Step: 4050000. Time Elapsed: 4495.166 s. Mean Reward: -26.485. Std of Reward: 2.027. Training.
+[INFO] move_to_static_target_01. Step: 4100000. Time Elapsed: 4551.021 s. Mean Reward: -26.814. Std of Reward: 2.613. Training.
+[INFO] move_to_static_target_01. Step: 4150000. Time Elapsed: 4606.876 s. Mean Reward: -26.545. Std of Reward: 1.914. Training.
+[INFO] move_to_static_target_01. Step: 4200000. Time Elapsed: 4660.742 s. Mean Reward: -26.871. Std of Reward: 3.072. Training.
+[INFO] move_to_static_target_01. Step: 4250000. Time Elapsed: 4718.560 s. Mean Reward: -26.645. Std of Reward: 2.650. Training.
+[INFO] move_to_static_target_01. Step: 4300000. Time Elapsed: 4771.097 s. Mean Reward: -26.501. Std of Reward: 2.199. Training.
+[INFO] move_to_static_target_01. Step: 4350000. Time Elapsed: 4830.195 s. Mean Reward: -26.164. Std of Reward: 3.648. Training.
+[INFO] move_to_static_target_01. Step: 4400000. Time Elapsed: 4883.584 s. Mean Reward: -26.748. Std of Reward: 4.741. Training.
+[INFO] move_to_static_target_01. Step: 4450000. Time Elapsed: 4941.833 s. Mean Reward: -26.466. Std of Reward: 2.174. Training.
+[INFO] move_to_static_target_01. Step: 4500000. Time Elapsed: 4994.189 s. Mean Reward: -26.592. Std of Reward: 2.195. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-4499864.onnx
+[INFO] move_to_static_target_01. Step: 4550000. Time Elapsed: 5050.999 s. Mean Reward: -26.267. Std of Reward: 1.996. Training.
+[INFO] move_to_static_target_01. Step: 4600000. Time Elapsed: 5105.996 s. Mean Reward: -26.648. Std of Reward: 2.175. Training.
+[INFO] move_to_static_target_01. Step: 4650000. Time Elapsed: 5160.750 s. Mean Reward: -26.578. Std of Reward: 2.332. Training.
+[INFO] move_to_static_target_01. Step: 4700000. Time Elapsed: 5219.131 s. Mean Reward: -26.545. Std of Reward: 2.552. Training.
+[INFO] move_to_static_target_01. Step: 4750000. Time Elapsed: 5271.758 s. Mean Reward: -26.614. Std of Reward: 2.368. Training.
+[INFO] move_to_static_target_01. Step: 4800000. Time Elapsed: 5328.388 s. Mean Reward: -26.562. Std of Reward: 1.938. Training.
+[INFO] move_to_static_target_01. Step: 4850000. Time Elapsed: 5379.280 s. Mean Reward: -26.382. Std of Reward: 3.086. Training.
+[INFO] move_to_static_target_01. Step: 4900000. Time Elapsed: 5436.016 s. Mean Reward: -26.448. Std of Reward: 2.095. Training.
+[INFO] move_to_static_target_01. Step: 4950000. Time Elapsed: 5488.290 s. Mean Reward: -26.281. Std of Reward: 1.947. Training.
+[INFO] move_to_static_target_01. Step: 5000000. Time Elapsed: 5545.454 s. Mean Reward: -26.367. Std of Reward: 2.483. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-4999888.onnx
+[INFO] move_to_static_target_01. Step: 5050000. Time Elapsed: 5595.854 s. Mean Reward: -26.349. Std of Reward: 1.893. Training.
+[INFO] move_to_static_target_01. Step: 5100000. Time Elapsed: 5650.854 s. Mean Reward: -26.505. Std of Reward: 3.610. Training.
+[INFO] move_to_static_target_01. Step: 5150000. Time Elapsed: 5703.547 s. Mean Reward: -26.858. Std of Reward: 3.086. Training.
+[INFO] move_to_static_target_01. Step: 5200000. Time Elapsed: 5757.032 s. Mean Reward: -26.235. Std of Reward: 1.894. Training.
+[INFO] move_to_static_target_01. Step: 5250000. Time Elapsed: 5813.484 s. Mean Reward: -26.280. Std of Reward: 3.016. Training.
+[INFO] move_to_static_target_01. Step: 5300000. Time Elapsed: 5864.817 s. Mean Reward: -26.473. Std of Reward: 2.311. Training.
+[INFO] move_to_static_target_01. Step: 5350000. Time Elapsed: 5921.603 s. Mean Reward: -26.621. Std of Reward: 2.331. Training.
+[INFO] move_to_static_target_01. Step: 5400000. Time Elapsed: 5973.570 s. Mean Reward: -26.470. Std of Reward: 2.984. Training.
+[INFO] move_to_static_target_01. Step: 5450000. Time Elapsed: 6028.017 s. Mean Reward: -26.387. Std of Reward: 2.079. Training.
+[INFO] move_to_static_target_01. Step: 5500000. Time Elapsed: 6080.433 s. Mean Reward: -26.591. Std of Reward: 2.378. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-5499984.onnx
+[INFO] move_to_static_target_01. Step: 5550000. Time Elapsed: 6135.871 s. Mean Reward: -26.499. Std of Reward: 2.248. Training.
+[INFO] move_to_static_target_01. Step: 5600000. Time Elapsed: 6188.654 s. Mean Reward: -26.202. Std of Reward: 1.876. Training.
+[INFO] move_to_static_target_01. Step: 5650000. Time Elapsed: 6243.100 s. Mean Reward: -26.508. Std of Reward: 2.960. Training.
+[INFO] move_to_static_target_01. Step: 5700000. Time Elapsed: 6297.594 s. Mean Reward: -26.274. Std of Reward: 2.043. Training.
+[INFO] move_to_static_target_01. Step: 5750000. Time Elapsed: 6349.637 s. Mean Reward: -26.606. Std of Reward: 2.694. Training.
+[INFO] move_to_static_target_01. Step: 5800000. Time Elapsed: 6405.681 s. Mean Reward: -26.253. Std of Reward: 2.198. Training.
+[INFO] move_to_static_target_01. Step: 5850000. Time Elapsed: 6456.627 s. Mean Reward: -26.205. Std of Reward: 2.137. Training.
+[INFO] move_to_static_target_01. Step: 5900000. Time Elapsed: 6514.033 s. Mean Reward: -26.381. Std of Reward: 2.741. Training.
+[INFO] move_to_static_target_01. Step: 5950000. Time Elapsed: 6565.721 s. Mean Reward: -26.132. Std of Reward: 3.001. Training.
+[INFO] move_to_static_target_01. Step: 6000000. Time Elapsed: 6622.580 s. Mean Reward: -26.354. Std of Reward: 3.422. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-5999776.onnx
+[INFO] move_to_static_target_01. Step: 6050000. Time Elapsed: 6673.414 s. Mean Reward: -26.257. Std of Reward: 2.643. Training.
+[INFO] move_to_static_target_01. Step: 6100000. Time Elapsed: 6728.283 s. Mean Reward: -26.124. Std of Reward: 2.030. Training.
+[INFO] move_to_static_target_01. Step: 6150000. Time Elapsed: 6781.692 s. Mean Reward: -26.442. Std of Reward: 2.794. Training.
+[INFO] move_to_static_target_01. Step: 6200000. Time Elapsed: 6834.549 s. Mean Reward: -26.365. Std of Reward: 2.431. Training.
+[INFO] move_to_static_target_01. Step: 6250000. Time Elapsed: 6891.202 s. Mean Reward: -26.075. Std of Reward: 2.071. Training.
+[INFO] move_to_static_target_01. Step: 6300000. Time Elapsed: 6942.754 s. Mean Reward: -26.319. Std of Reward: 2.633. Training.
+[INFO] move_to_static_target_01. Step: 6350000. Time Elapsed: 6998.907 s. Mean Reward: -26.089. Std of Reward: 1.919. Training.
+[INFO] move_to_static_target_01. Step: 6400000. Time Elapsed: 7049.823 s. Mean Reward: -26.261. Std of Reward: 2.368. Training.
+[INFO] move_to_static_target_01. Step: 6450000. Time Elapsed: 7106.522 s. Mean Reward: -26.153. Std of Reward: 2.169. Training.
+[INFO] move_to_static_target_01. Step: 6500000. Time Elapsed: 7158.700 s. Mean Reward: -26.093. Std of Reward: 1.534. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-6499848.onnx
+[INFO] move_to_static_target_01. Step: 6550000. Time Elapsed: 7216.043 s. Mean Reward: -26.175. Std of Reward: 1.884. Training.
+[INFO] move_to_static_target_01. Step: 6600000. Time Elapsed: 7266.674 s. Mean Reward: -26.303. Std of Reward: 1.625. Training.
+[INFO] move_to_static_target_01. Step: 6650000. Time Elapsed: 7321.798 s. Mean Reward: -26.296. Std of Reward: 1.788. Training.
+[INFO] move_to_static_target_01. Step: 6700000. Time Elapsed: 7374.575 s. Mean Reward: -26.080. Std of Reward: 1.835. Training.
+[INFO] move_to_static_target_01. Step: 6750000. Time Elapsed: 7428.312 s. Mean Reward: -26.041. Std of Reward: 1.107. Training.
+[INFO] move_to_static_target_01. Step: 6800000. Time Elapsed: 7485.076 s. Mean Reward: -26.145. Std of Reward: 1.091. Training.
+[INFO] move_to_static_target_01. Step: 6850000. Time Elapsed: 7536.674 s. Mean Reward: -26.198. Std of Reward: 1.188. Training.
+[INFO] move_to_static_target_01. Step: 6900000. Time Elapsed: 7593.431 s. Mean Reward: -26.057. Std of Reward: 0.994. Training.
+[INFO] move_to_static_target_01. Step: 6950000. Time Elapsed: 7645.465 s. Mean Reward: -25.932. Std of Reward: 0.750. Training.
+[INFO] move_to_static_target_01. Step: 7000000. Time Elapsed: 7699.916 s. Mean Reward: -26.015. Std of Reward: 1.108. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-6999752.onnx
+[INFO] move_to_static_target_01. Step: 7050000. Time Elapsed: 7752.517 s. Mean Reward: -26.518. Std of Reward: 2.561. Training.
+[INFO] move_to_static_target_01. Step: 7100000. Time Elapsed: 7808.116 s. Mean Reward: -25.954. Std of Reward: 0.811. Training.
+[INFO] move_to_static_target_01. Step: 7150000. Time Elapsed: 7860.988 s. Mean Reward: -25.887. Std of Reward: 0.670. Training.
+[INFO] move_to_static_target_01. Step: 7200000. Time Elapsed: 7915.641 s. Mean Reward: -26.017. Std of Reward: 0.794. Training.
+[INFO] move_to_static_target_01. Step: 7250000. Time Elapsed: 7970.155 s. Mean Reward: -25.815. Std of Reward: 0.539. Training.
+[INFO] move_to_static_target_01. Step: 7300000. Time Elapsed: 8022.390 s. Mean Reward: -25.878. Std of Reward: 0.792. Training.
+[INFO] move_to_static_target_01. Step: 7350000. Time Elapsed: 8078.334 s. Mean Reward: -25.878. Std of Reward: 1.437. Training.
+[INFO] move_to_static_target_01. Step: 7400000. Time Elapsed: 8129.364 s. Mean Reward: -25.711. Std of Reward: 0.545. Training.
+[INFO] move_to_static_target_01. Step: 7450000. Time Elapsed: 8187.027 s. Mean Reward: -25.766. Std of Reward: 0.563. Training.
+[INFO] move_to_static_target_01. Step: 7500000. Time Elapsed: 8238.850 s. Mean Reward: -25.735. Std of Reward: 0.504. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-7499976.onnx
+[INFO] move_to_static_target_01. Step: 7550000. Time Elapsed: 8295.473 s. Mean Reward: -25.606. Std of Reward: 0.442. Training.
+[INFO] move_to_static_target_01. Step: 7600000. Time Elapsed: 8346.354 s. Mean Reward: -25.672. Std of Reward: 0.464. Training.
+[INFO] move_to_static_target_01. Step: 7650000. Time Elapsed: 8401.233 s. Mean Reward: -25.703. Std of Reward: 0.550. Training.
+[INFO] move_to_static_target_01. Step: 7700000. Time Elapsed: 8454.587 s. Mean Reward: -25.746. Std of Reward: 1.163. Training.
+[INFO] move_to_static_target_01. Step: 7750000. Time Elapsed: 8507.602 s. Mean Reward: -25.716. Std of Reward: 0.528. Training.
+[INFO] move_to_static_target_01. Step: 7800000. Time Elapsed: 8564.089 s. Mean Reward: -25.684. Std of Reward: 0.455. Training.
+[INFO] move_to_static_target_01. Step: 7850000. Time Elapsed: 8615.666 s. Mean Reward: -25.651. Std of Reward: 0.394. Training.
+[INFO] move_to_static_target_01. Step: 7900000. Time Elapsed: 8671.871 s. Mean Reward: -25.797. Std of Reward: 0.682. Training.
+[INFO] move_to_static_target_01. Step: 7950000. Time Elapsed: 8722.776 s. Mean Reward: -25.942. Std of Reward: 1.173. Training.
+[INFO] move_to_static_target_01. Step: 8000000. Time Elapsed: 8779.439 s. Mean Reward: -25.754. Std of Reward: 0.532. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-7999792.onnx
+[INFO] move_to_static_target_01. Step: 8050000. Time Elapsed: 8831.638 s. Mean Reward: -25.576. Std of Reward: 0.403. Training.
+[INFO] move_to_static_target_01. Step: 8100000. Time Elapsed: 8888.756 s. Mean Reward: -25.926. Std of Reward: 2.408. Training.
+[INFO] move_to_static_target_01. Step: 8150000. Time Elapsed: 8939.226 s. Mean Reward: -25.584. Std of Reward: 0.297. Training.
+[INFO] move_to_static_target_01. Step: 8200000. Time Elapsed: 8994.182 s. Mean Reward: -25.585. Std of Reward: 0.319. Training.
+[INFO] move_to_static_target_01. Step: 8250000. Time Elapsed: 9046.734 s. Mean Reward: -25.605. Std of Reward: 0.375. Training.
+[INFO] move_to_static_target_01. Step: 8300000. Time Elapsed: 9100.342 s. Mean Reward: -25.638. Std of Reward: 0.381. Training.
+[INFO] move_to_static_target_01. Step: 8350000. Time Elapsed: 9156.883 s. Mean Reward: -25.626. Std of Reward: 0.341. Training.
+[INFO] move_to_static_target_01. Step: 8400000. Time Elapsed: 9208.350 s. Mean Reward: -25.784. Std of Reward: 1.137. Training.
+[INFO] move_to_static_target_01. Step: 8450000. Time Elapsed: 9265.087 s. Mean Reward: -25.756. Std of Reward: 0.701. Training.
+[INFO] move_to_static_target_01. Step: 8500000. Time Elapsed: 9317.208 s. Mean Reward: -25.718. Std of Reward: 0.493. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-8499864.onnx
+[INFO] move_to_static_target_01. Step: 8550000. Time Elapsed: 9371.653 s. Mean Reward: -25.812. Std of Reward: 0.926. Training.
+[INFO] move_to_static_target_01. Step: 8600000. Time Elapsed: 9424.270 s. Mean Reward: -25.694. Std of Reward: 0.496. Training.
+[INFO] move_to_static_target_01. Step: 8650000. Time Elapsed: 9479.540 s. Mean Reward: -25.738. Std of Reward: 0.621. Training.
+[INFO] move_to_static_target_01. Step: 8700000. Time Elapsed: 9532.452 s. Mean Reward: -25.556. Std of Reward: 0.271. Training.
+[INFO] move_to_static_target_01. Step: 8750000. Time Elapsed: 9586.867 s. Mean Reward: -25.635. Std of Reward: 0.449. Training.
+[INFO] move_to_static_target_01. Step: 8800000. Time Elapsed: 9641.374 s. Mean Reward: -25.556. Std of Reward: 0.339. Training.
+[INFO] move_to_static_target_01. Step: 8850000. Time Elapsed: 9693.619 s. Mean Reward: -25.640. Std of Reward: 0.412. Training.
+[INFO] move_to_static_target_01. Step: 8900000. Time Elapsed: 9749.788 s. Mean Reward: -25.626. Std of Reward: 0.508. Training.
+[INFO] move_to_static_target_01. Step: 8950000. Time Elapsed: 9800.691 s. Mean Reward: -25.518. Std of Reward: 0.422. Training.
+[INFO] move_to_static_target_01. Step: 9000000. Time Elapsed: 9858.203 s. Mean Reward: -25.618. Std of Reward: 0.561. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-8999912.onnx
+[INFO] move_to_static_target_01. Step: 9050000. Time Elapsed: 9911.814 s. Mean Reward: -25.601. Std of Reward: 0.474. Training.
+[INFO] move_to_static_target_01. Step: 9100000. Time Elapsed: 9969.028 s. Mean Reward: -25.629. Std of Reward: 0.469. Training.
+[INFO] move_to_static_target_01. Step: 9150000. Time Elapsed: 10020.095 s. Mean Reward: -25.666. Std of Reward: 0.710. Training.
+[INFO] move_to_static_target_01. Step: 9200000. Time Elapsed: 10075.331 s. Mean Reward: -25.582. Std of Reward: 0.508. Training.
+[INFO] move_to_static_target_01. Step: 9250000. Time Elapsed: 10129.084 s. Mean Reward: -25.580. Std of Reward: 0.450. Training.
+[INFO] move_to_static_target_01. Step: 9300000. Time Elapsed: 10182.513 s. Mean Reward: -25.536. Std of Reward: 0.368. Training.
+[INFO] move_to_static_target_01. Step: 9350000. Time Elapsed: 10239.561 s. Mean Reward: -25.711. Std of Reward: 0.830. Training.
+[INFO] move_to_static_target_01. Step: 9400000. Time Elapsed: 10292.106 s. Mean Reward: -25.578. Std of Reward: 0.394. Training.
+[INFO] move_to_static_target_01. Step: 9450000. Time Elapsed: 10348.001 s. Mean Reward: -25.628. Std of Reward: 0.592. Training.
+[INFO] move_to_static_target_01. Step: 9500000. Time Elapsed: 10398.883 s. Mean Reward: -25.571. Std of Reward: 0.446. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-9499752.onnx
+[INFO] move_to_static_target_01. Step: 9550000. Time Elapsed: 10455.717 s. Mean Reward: -25.660. Std of Reward: 0.729. Training.
+[INFO] move_to_static_target_01. Step: 9600000. Time Elapsed: 10507.877 s. Mean Reward: -25.623. Std of Reward: 0.807. Training.
+[INFO] move_to_static_target_01. Step: 9650000. Time Elapsed: 10566.733 s. Mean Reward: -25.633. Std of Reward: 0.608. Training.
+[INFO] move_to_static_target_01. Step: 9700000. Time Elapsed: 10622.192 s. Mean Reward: -25.580. Std of Reward: 0.541. Training.
+[INFO] move_to_static_target_01. Step: 9750000. Time Elapsed: 10679.416 s. Mean Reward: -25.789. Std of Reward: 1.508. Training.
+[INFO] move_to_static_target_01. Step: 9800000. Time Elapsed: 10733.938 s. Mean Reward: -25.638. Std of Reward: 0.503. Training.
+[INFO] move_to_static_target_01. Step: 9850000. Time Elapsed: 10789.377 s. Mean Reward: -25.654. Std of Reward: 0.858. Training.
+[INFO] move_to_static_target_01. Step: 9900000. Time Elapsed: 10851.146 s. Mean Reward: -25.571. Std of Reward: 0.393. Training.
+[INFO] move_to_static_target_01. Step: 9950000. Time Elapsed: 10905.173 s. Mean Reward: -25.532. Std of Reward: 0.311. Training.
+[INFO] move_to_static_target_01. Step: 10000000. Time Elapsed: 10963.555 s. Mean Reward: -25.538. Std of Reward: 0.252. Training.
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-9999776.onnx
+[INFO] Exported results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-10003360.onnx
+[INFO] Copied results/move_to_static_target_01/move_to_static_target_01/move_to_static_target_01-10003360.onnx to results/move_to_static_target_01/move_to_static_target_01.onnx.

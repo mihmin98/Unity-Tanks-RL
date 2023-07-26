@@ -9,6 +9,7 @@ TagManager:
   - Box_Life
   - Box_Shield
   - Box_WeaponUpgrade
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Ground
   - Players
-  - 
+  - Targets
   - 
   - 
   - 
