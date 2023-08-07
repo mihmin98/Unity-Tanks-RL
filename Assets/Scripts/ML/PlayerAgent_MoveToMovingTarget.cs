@@ -21,6 +21,11 @@ public class PlayerAgent_MoveToMovingTarget : Agent
     private readonly List<Vector3> rayDirections = new List<Vector3>();
     private List<(RaycastHit, bool)> raycastHits = null;
 
+    [Header("Enable/Disable Observations")]
+    public bool useAgentPositionObservation = false;
+    public bool useTargetPositionObservation = false;
+    public bool useTargetVelocityObservation = true;
+
     [Header("Penalties")]
     public float constantPenalty = -0.005f;
     public float movingAwayFromTargetPenalty = -0.025f;
@@ -93,8 +98,10 @@ public class PlayerAgent_MoveToMovingTarget : Agent
 
         // Observation Size
         int observationSize = numRays * 2; // for each ray add distance and hit layer
-        //observationSize += 3; // target position
-        //observationSize += 3; // agent position
+        if (useTargetPositionObservation)
+            observationSize += 3; // target position
+        if (useAgentPositionObservation)
+            observationSize += 3; // agent position
         observationSize += 3; // forward vector
         observationSize += 3; // direction towards target
         observationSize += 1; // angle towards target
@@ -102,7 +109,8 @@ public class PlayerAgent_MoveToMovingTarget : Agent
         observationSize += 3; // velocity
         observationSize += 1; // velocity angle compared to forward
         observationSize += 1; // velocity magnitude
-        observationSize += 3; // target velocity
+        if (useTargetVelocityObservation)
+            observationSize += 3; // target velocity
 
         behaviorParameters.BrainParameters.VectorObservationSize = observationSize;
     }
@@ -117,10 +125,12 @@ public class PlayerAgent_MoveToMovingTarget : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // target position
-        //sensor.AddObservation(target.transform.position);
+        if (useTargetPositionObservation)
+            sensor.AddObservation(target.transform.position);
 
         // agent position
-        //sensor.AddObservation(transform.position);
+        if (useAgentPositionObservation)
+            sensor.AddObservation(transform.position);
 
         // forward vector
         sensor.AddObservation(transform.forward);
@@ -146,7 +156,13 @@ public class PlayerAgent_MoveToMovingTarget : Agent
         sensor.AddObservation(tankMovement.m_movingAvgVel.magnitude);
 
         // target velocity
-        sensor.AddObservation(targetNavMeshAgent.velocity.normalized);
+        if (useTargetVelocityObservation)
+        {
+            if (targetNavMeshAgent != null)
+                sensor.AddObservation(targetNavMeshAgent.velocity.normalized);
+            else
+                sensor.AddObservation(Vector3.zero);
+        }
 
         // raycast distance and layers
         foreach (var hitTuple in (raycastHits != null ? raycastHits : GetRaycastHits()))

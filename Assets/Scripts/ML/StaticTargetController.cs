@@ -26,20 +26,28 @@ public class StaticTargetController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerAgent_MoveToStaticTarget agent = other.GetComponent<PlayerAgent_MoveToStaticTarget>();
-        if (agent != null)
+        PlayerAgent_MoveToStaticTarget agentStatic = other.GetComponent<PlayerAgent_MoveToStaticTarget>();
+        PlayerAgent_MoveToMovingTarget agentMoving = other.GetComponent<PlayerAgent_MoveToMovingTarget>();
+
+        if (agentStatic != null || agentMoving != null)
         {
             --timesToTouchUntilRandomRespawn;
             if (timesToTouchUntilRandomRespawn <= 0) // Done all the touches
             {
-                agent.TouchedObjective(false);
+                if (agentStatic != null)
+                    agentStatic.TouchedObjective(false);
+                if (agentMoving != null)
+                    agentMoving.TouchedObjective(false);
                 transform.position = GetRandomSpawnPosition();
             }
             else
             {
-                agent.TouchedObjective(true);
+                if (agentStatic != null)
+                    agentStatic.TouchedObjective(true);
+                if (agentMoving != null)
+                    agentMoving.TouchedObjective(true);
             }
-        }        
+        }
     }
 
     private Vector3 GetRandomSpawnPosition()
