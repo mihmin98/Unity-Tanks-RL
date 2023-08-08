@@ -70,13 +70,27 @@ public class MovingTargetController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerAgent_MoveToMovingTarget agent = other.GetComponent<PlayerAgent_MoveToMovingTarget>();
-        if (agent != null)
+        PlayerAgent_MoveToStaticTarget agentStatic = other.GetComponent<PlayerAgent_MoveToStaticTarget>();
+        PlayerAgent_MoveToMovingTarget agentMoving = other.GetComponent<PlayerAgent_MoveToMovingTarget>();
+        if (agentStatic != null || agentMoving != null)
         {
-            agent.TouchedObjective(false);
+            if (agentStatic != null)
+                agentStatic.TouchedObjective(false);
+            if (agentMoving != null)
+                agentMoving.TouchedObjective(false);
             transform.position = GetRandomSpawnPoint();
             navMeshAgent.destination = GetRandomSpawnPoint();
         }
     }
 
+    public void ResetSeededRNG(Int32 seed)
+    {
+        rng = new System.Random(seed);
+    }
+
+    public void GetNewPositionAndDestination()
+    {
+        transform.position = GetRandomSpawnPoint();
+        navMeshAgent.destination = GetRandomSpawnPoint();
+    }
 }

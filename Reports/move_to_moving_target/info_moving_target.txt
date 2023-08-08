@@ -223,3 +223,7 @@ move_to_moving_target_19:
 -------
 
 sa incerc sa bag si memorie recurenta
+
+
+
+la test fac 100 de atingeri

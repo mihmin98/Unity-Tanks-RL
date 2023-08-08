@@ -206,3 +206,4 @@ ca evaluare a modelelor
 
 o sa trebuiasca sa ating 50 de tinte care apar in aceeasi ordine, adica au acelasi seed, la inceput manual (human player) si dupa cu modelele antrenate
 si performanta e cat de repede ajung sa ating cele 50 de tinte
+am facut pana la urma cu 40 de tinte
