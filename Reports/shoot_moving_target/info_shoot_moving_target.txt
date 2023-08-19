@@ -1,0 +1,264 @@
+shoot_moving_target_01:
+    1 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    bullet velocity & magnitude la obs
+
+    mean_reward 156
+
+    mlagents-learn --run-id shoot_moving_target_01 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_01.log
+
+
+shoot_moving_target_02:
+    1 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    doar bullet velocity magnitude la obs, fara bullet velocity
+
+    mean_reward 166
+
+    mlagents-learn --run-id shoot_moving_target_02 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_02.log
+
+
+shoot_moving_target_03:
+    1 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 183
+
+    mlagents-learn --run-id shoot_moving_target_03 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_03.log
+
+
+shoot_moving_target_04:
+    1 x 256, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 138
+
+    mlagents-learn --run-id shoot_moving_target_04 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_04.log
+
+
+shoot_moving_target_05:
+    1 x 512, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 166
+
+    mlagents-learn --run-id shoot_moving_target_05 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_05.log
+
+
+shoot_moving_target_06:
+    3 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    bullet velocity & magnitude la obs
+
+    mean_reward 152
+
+    mlagents-learn --run-id shoot_moving_target_06 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_06.log
+
+
+shoot_moving_target_07:
+    3 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    doar bullet velocity magnitude la obs, fara bullet velocity
+
+    mean_reward 163
+
+    mlagents-learn --run-id shoot_moving_target_07 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_07.log
+
+
+shoot_moving_target_08:
+    3 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 162
+
+    mlagents-learn --run-id shoot_moving_target_08 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_08.log
+
+
+shoot_moving_target_09:
+    3 x 256, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 140
+
+    mlagents-learn --run-id shoot_moving_target_09 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_09.log
+
+
+shoot_moving_target_10:
+    3 x 512, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 115
+
+    mlagents-learn --run-id shoot_moving_target_10 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_10.log
+
+
+shoot_moving_target_11:
+    5 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 130
+
+    mlagents-learn --run-id shoot_moving_target_11 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_11.log
+
+
+shoot_moving_target_12:
+    5 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    bullet velocity & magnitude la obs
+
+    mean_reward 153
+
+    mlagents-learn --run-id shoot_moving_target_12 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_12.log
+
+
+shoot_moving_target_13:
+    5 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    doar bullet velocity magnitude la obs, fara bullet velocity
+
+    mean_reward 137
+
+    mlagents-learn --run-id shoot_moving_target_13 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_13.log
+
+
+shoot_moving_target_14:
+    5 x 256, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 127
+
+    mlagents-learn --run-id shoot_moving_target_14 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_14.log
+
+
+shoot_moving_target_15:
+    5 x 512, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 100
+
+    mlagents-learn --run-id shoot_moving_target_15 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_15.log
+
+
+shoot_moving_target_16:
+    7 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    bullet velocity & magnitude la obs
+
+    mean_reward 125
+
+    mlagents-learn --run-id shoot_moving_target_16 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_16.log
+
+
+shoot_moving_target_17:
+    7 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    doar bullet velocity magnitude la obs, fara bullet velocity
+
+    mean_reward 127
+
+    mlagents-learn --run-id shoot_moving_target_17 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_17.log
+
+
+shoot_moving_target_18:
+    7 x 128, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 123
+
+    mlagents-learn --run-id shoot_moving_target_18 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_18.log
+
+
+shoot_moving_target_19:
+    7 x 256, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 111
+
+    mlagents-learn --run-id shoot_moving_target_19 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_19.log
+
+
+shoot_moving_target_20:
+    7 x 512, curioisty
+    learningrate: 0.0003
+    
+    fara pozitii la obs
+    target velocity la obs
+    fara bullet observations; doar daca a tras
+
+    mean_reward 95
+
+    mlagents-learn --run-id shoot_moving_target_20 --time-scale 20 shoot_moving_target.yaml 2>&1 | tee results/shoot_moving_target_20.log
+
+
+
+=====
+
+sa incerc sa fac un fel de simulare pt lupta cu tanku; gen sa incerc sa il fac sa invete sa impuste target de la spate, sa nu stea in fata lui

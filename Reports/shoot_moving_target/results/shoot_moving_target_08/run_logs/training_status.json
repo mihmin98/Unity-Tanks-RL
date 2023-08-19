@@ -1,0 +1,209 @@
+{
+    "shoot_moving_target_08": {
+        "checkpoints": [
+            {
+                "steps": 499815,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-499815.onnx",
+                "reward": -22.842100739479065,
+                "creation_time": 1691732422.248577,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-499815.pt"
+                ]
+            },
+            {
+                "steps": 999839,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-999839.onnx",
+                "reward": -19.473884026209515,
+                "creation_time": 1691733160.0936656,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-999839.pt"
+                ]
+            },
+            {
+                "steps": 1499887,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-1499887.onnx",
+                "reward": 30.185028076171875,
+                "creation_time": 1691733896.2930264,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-1499887.pt"
+                ]
+            },
+            {
+                "steps": 1999959,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-1999959.onnx",
+                "reward": 38.40789222717285,
+                "creation_time": 1691734629.9250221,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-1999959.pt"
+                ]
+            },
+            {
+                "steps": 2499799,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-2499799.onnx",
+                "reward": null,
+                "creation_time": 1691735361.5630724,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-2499799.pt"
+                ]
+            },
+            {
+                "steps": 2999895,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-2999895.onnx",
+                "reward": null,
+                "creation_time": 1691736099.5738971,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-2999895.pt"
+                ]
+            },
+            {
+                "steps": 3499911,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-3499911.onnx",
+                "reward": 68.87272409030369,
+                "creation_time": 1691736832.8419275,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-3499911.pt"
+                ]
+            },
+            {
+                "steps": 3999999,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-3999999.onnx",
+                "reward": 78.88303634524345,
+                "creation_time": 1691737571.4643385,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-3999999.pt"
+                ]
+            },
+            {
+                "steps": 4499839,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-4499839.onnx",
+                "reward": 78.21919965744019,
+                "creation_time": 1691738307.6263607,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-4499839.pt"
+                ]
+            },
+            {
+                "steps": 4999839,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-4999839.onnx",
+                "reward": 95.2857080300649,
+                "creation_time": 1691739068.0622091,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-4999839.pt"
+                ]
+            },
+            {
+                "steps": 5499911,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-5499911.onnx",
+                "reward": null,
+                "creation_time": 1691739836.977166,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-5499911.pt"
+                ]
+            },
+            {
+                "steps": 5999983,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-5999983.onnx",
+                "reward": null,
+                "creation_time": 1691740618.371351,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-5999983.pt"
+                ]
+            },
+            {
+                "steps": 6499823,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-6499823.onnx",
+                "reward": 93.70635318756104,
+                "creation_time": 1691741370.5571709,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-6499823.pt"
+                ]
+            },
+            {
+                "steps": 6999895,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-6999895.onnx",
+                "reward": 170.95896530151367,
+                "creation_time": 1691742161.1880832,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-6999895.pt"
+                ]
+            },
+            {
+                "steps": 7499839,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-7499839.onnx",
+                "reward": 134.41691336366864,
+                "creation_time": 1691742953.2803047,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-7499839.pt"
+                ]
+            },
+            {
+                "steps": 7999767,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-7999767.onnx",
+                "reward": 168.7475996017456,
+                "creation_time": 1691743737.7399962,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-7999767.pt"
+                ]
+            },
+            {
+                "steps": 8499863,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-8499863.onnx",
+                "reward": 157.10994868477187,
+                "creation_time": 1691744495.5078452,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-8499863.pt"
+                ]
+            },
+            {
+                "steps": 8999839,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-8999839.onnx",
+                "reward": 143.5165672302246,
+                "creation_time": 1691745271.4905012,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-8999839.pt"
+                ]
+            },
+            {
+                "steps": 9499935,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-9499935.onnx",
+                "reward": 162.18458592891693,
+                "creation_time": 1691746026.126316,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-9499935.pt"
+                ]
+            },
+            {
+                "steps": 9999751,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-9999751.onnx",
+                "reward": 162.34982681274414,
+                "creation_time": 1691746790.369585,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-9999751.pt"
+                ]
+            },
+            {
+                "steps": 10004359,
+                "file_path": "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-10004359.onnx",
+                "reward": 162.34982681274414,
+                "creation_time": 1691746790.7158065,
+                "auxillary_file_paths": [
+                    "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-10004359.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10004359,
+            "file_path": "results/shoot_moving_target_08/shoot_moving_target_08.onnx",
+            "reward": 162.34982681274414,
+            "creation_time": 1691746790.7158065,
+            "auxillary_file_paths": [
+                "results/shoot_moving_target_08/shoot_moving_target_08/shoot_moving_target_08-10004359.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}

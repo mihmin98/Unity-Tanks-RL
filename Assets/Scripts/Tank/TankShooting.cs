@@ -29,7 +29,14 @@ public class TankShooting : MonoBehaviour
     public float m_cooldownTime = 0.4f;  // THe time between two consecutive shootings
     private float m_lastFireTime = -1000;
 
+    private PlayerAgent_ShootMovingTarget m_playerAgentShootMoving;
+
     public void SetAsAI() { m_IsAI = true; }
+
+    public void SetCurrentLaunchForce(float force)
+    {
+        m_CurrentLaunchForce = force;
+    }
 
     void initValues()
     {
@@ -54,6 +61,7 @@ public class TankShooting : MonoBehaviour
 
     private void Start()
     {
+        m_playerAgentShootMoving = GetComponent<PlayerAgent_ShootMovingTarget>();
         initValues();
     }
 
@@ -128,8 +136,16 @@ public class TankShooting : MonoBehaviour
 
         ShellExplosion shellExplosionInstance = shellInstance.gameObject.GetComponent<ShellExplosion>();
         shellExplosionInstance.m_parent = gameObject;
-        shellExplosionInstance.m_isUpgraded = m_tankAddons.IsUpgradeActive(UpgradeType.E_UPGRADE_WEAPON);
+        if (m_tankAddons != null)
+            shellExplosionInstance.m_isUpgraded = m_tankAddons.IsUpgradeActive(UpgradeType.E_UPGRADE_WEAPON);
 
+        if (m_playerAgentShootMoving != null)
+        {
+            m_playerAgentShootMoving.FireBullet(shellExplosionInstance.gameObject, shellInstance);
+            shellExplosionInstance.SetPlayerAgentShootMoving(m_playerAgentShootMoving);
+            shellExplosionInstance.m_TankMask |= (1 << LayerMask.NameToLayer("Targets"));
+            shellExplosionInstance.m_TankMask |= (1 << LayerMask.NameToLayer("Default"));
+        }
 
         // Set the shell's velocity to the launch force in the fire position's forward direction.
         shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward * GameManager.m_SpeedMultiplier;

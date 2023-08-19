@@ -18,6 +18,10 @@ public class ShellExplosion : MonoBehaviour
 
     private Vector3 m_startPos;
 
+    private PlayerAgent_ShootMovingTarget m_playerAgentShootMoving;
+
+    public void SetPlayerAgentShootMoving(PlayerAgent_ShootMovingTarget playerAgent) { m_playerAgentShootMoving = playerAgent; }
+
     private void Start()
     {
         // If it isn't destroyed by then, destroy the shell after it's lifetime.
@@ -41,6 +45,8 @@ public class ShellExplosion : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, m_ExplosionRadius, m_TankMask);
 
         bool hitOtherObjectsThanFriendlyOnes = false;
+        bool hitMLTarget = false;
+        GameObject targetGameObject = null;
 
         // Go through all the colliders...
         for (int i = 0; i < colliders.Length; i++)
@@ -51,6 +57,12 @@ public class ShellExplosion : MonoBehaviour
 
             hitOtherObjectsThanFriendlyOnes = true;
 
+            if (m_playerAgentShootMoving != null && colliders[i].tag.Equals("Target"))
+            {
+                hitMLTarget = true;
+                targetGameObject = colliders[i].gameObject;
+            }
+
             // ... and find their rigidbody.
             Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody>();
 
@@ -60,7 +72,7 @@ public class ShellExplosion : MonoBehaviour
 
             // Don't take damage while shiled is active !
             BoxAddonBehavior tankAddons = targetRigidbody.GetComponent<BoxAddonBehavior>();
-            if (tankAddons.IsUpgradeActive(UpgradeType.E_UPGRADE_SHIELD))
+            if (tankAddons != null && tankAddons.IsUpgradeActive(UpgradeType.E_UPGRADE_SHIELD))
                 continue;
 
             // Add an explosion force.
@@ -91,6 +103,27 @@ public class ShellExplosion : MonoBehaviour
 
             // Play the explosion sound effect.
             m_ExplosionAudio.Play();
+
+            if (m_playerAgentShootMoving != null)
+            {
+                if (hitMLTarget)
+                {
+                    // if hit target, apply reward and set new position for the target if it has a moving target controller
+                    m_playerAgentShootMoving.HitTarget();
+                    if (targetGameObject != null)
+                    {
+                        MovingTargetController controller = targetGameObject.GetComponent<MovingTargetController>();
+                        if (controller != null)
+                        {
+                            controller.GetNewPositionAndDestination();
+                        }
+                    }
+                } else
+                {
+                    // apply penalty for miss
+                    m_playerAgentShootMoving.MissTarget();
+                }
+            }
 
             // Once the particles have finished, destroy the gameobject they are on.
             Destroy(m_ExplosionParticles.gameObject, m_ExplosionParticles.main.duration);

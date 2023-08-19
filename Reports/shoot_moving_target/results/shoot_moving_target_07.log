@@ -1,0 +1,304 @@
+
+            ┐  ╖
+        ╓╖╬│╡  ││╬╖╖
+    ╓╖╬│││││┘  ╬│││││╬╖
+ ╖╬│││││╬╜        ╙╬│││││╖╖                               ╗╗╗
+ ╬╬╬╬╖││╦╖        ╖╬││╗╣╣╣╬      ╟╣╣╬    ╟╣╣╣             ╜╜╜  ╟╣╣
+ ╬╬╬╬╬╬╬╬╖│╬╖╖╓╬╪│╓╣╣╣╣╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╒╣╣╖╗╣╣╣╗   ╣╣╣ ╣╣╣╣╣╣ ╟╣╣╖   ╣╣╣
+ ╬╬╬╬┐  ╙╬╬╬╬│╓╣╣╣╝╜  ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╣╙ ╙╣╣╣  ╣╣╣ ╙╟╣╣╜╙  ╫╣╣  ╟╣╣
+ ╬╬╬╬┐     ╙╬╬╣╣      ╫╣╣╣╬      ╟╣╣╬    ╟╣╣╣ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣     ╣╣╣┌╣╣╜
+ ╬╬╬╜       ╬╬╣╣      ╙╝╣╣╬      ╙╣╣╣╗╖╓╗╣╣╣╜ ╟╣╣╬   ╣╣╣  ╣╣╣  ╟╣╣╦╓    ╣╣╣╣╣
+ ╙   ╓╦╖    ╬╬╣╣   ╓╗╗╖            ╙╝╣╣╣╣╝╜   ╘╝╝╜   ╝╝╝  ╝╝╝   ╙╣╣╣    ╟╣╣╣
+   ╩╬╬╬╬╬╬╦╦╬╬╣╣╗╣╣╣╣╣╣╣╝                                             ╫╣╣╣╣
+      ╙╬╬╬╬╬╬╬╣╣╣╣╣╣╝╜
+          ╙╬╬╬╣╣╣╜
+             ╙
+        
+ Version information:
+  ml-agents: 0.30.0,
+  ml-agents-envs: 0.30.0,
+  Communicator API: 1.5.0,
+  PyTorch: 1.13.1+cu117
+[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
+[INFO] Connected to Unity environment with package version 2.3.0-exp.3 and communication version 1.5.0
+[INFO] Connected new brain: shoot_moving_target_07?team=0
+[INFO] Hyperparameters for behavior name shoot_moving_target_07: 
+	trainer_type:	ppo
+	hyperparameters:	
+	  batch_size:	256
+	  buffer_size:	8192
+	  learning_rate:	0.0003
+	  beta:	0.005
+	  epsilon:	0.2
+	  lambd:	0.95
+	  num_epoch:	3
+	  shared_critic:	False
+	  learning_rate_schedule:	linear
+	  beta_schedule:	linear
+	  epsilon_schedule:	linear
+	network_settings:	
+	  normalize:	False
+	  hidden_units:	128
+	  num_layers:	3
+	  vis_encode_type:	simple
+	  memory:	None
+	  goal_conditioning_type:	hyper
+	  deterministic:	False
+	reward_signals:	
+	  extrinsic:	
+	    gamma:	0.9
+	    strength:	1.0
+	    network_settings:	
+	      normalize:	False
+	      hidden_units:	128
+	      num_layers:	2
+	      vis_encode_type:	simple
+	      memory:	None
+	      goal_conditioning_type:	hyper
+	      deterministic:	False
+	  curiosity:	
+	    gamma:	0.99
+	    strength:	0.02
+	    network_settings:	
+	      normalize:	False
+	      hidden_units:	128
+	      num_layers:	3
+	      vis_encode_type:	simple
+	      memory:	None
+	      goal_conditioning_type:	hyper
+	      deterministic:	False
+	    learning_rate:	0.0003
+	    encoding_size:	None
+	init_path:	None
+	keep_checkpoints:	100
+	checkpoint_interval:	500000
+	max_steps:	10000000
+	time_horizon:	256
+	summary_freq:	50000
+	threaded:	False
+	self_play:	None
+	behavioral_cloning:	None
+/home/mih/.local/share/virtualenvs/ml_agents_test-Mi5MBi39/lib/python3.10/site-packages/mlagents/trainers/torch_entities/utils.py:289: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3277.)
+  torch.nn.functional.one_hot(_act.T, action_size[i]).float()
+[INFO] shoot_moving_target_07. Step: 50000. Time Elapsed: 82.765 s. Mean Reward: -111.703. Std of Reward: 21.283. Training.
+[INFO] shoot_moving_target_07. Step: 100000. Time Elapsed: 155.602 s. Mean Reward: -66.085. Std of Reward: 16.243. Training.
+[INFO] shoot_moving_target_07. Step: 150000. Time Elapsed: 233.454 s. Mean Reward: -47.472. Std of Reward: 8.846. Training.
+[INFO] shoot_moving_target_07. Step: 200000. Time Elapsed: 306.919 s. Mean Reward: -35.843. Std of Reward: 9.490. Training.
+[INFO] shoot_moving_target_07. Step: 250000. Time Elapsed: 384.936 s. Mean Reward: -30.105. Std of Reward: 9.490. Training.
+[INFO] shoot_moving_target_07. Step: 300000. Time Elapsed: 455.234 s. Mean Reward: -25.510. Std of Reward: 12.038. Training.
+[INFO] shoot_moving_target_07. Step: 350000. Time Elapsed: 541.241 s. Mean Reward: -19.881. Std of Reward: 13.795. Training.
+[INFO] shoot_moving_target_07. Step: 400000. Time Elapsed: 609.740 s. Mean Reward: -20.278. Std of Reward: 14.494. Training.
+[INFO] shoot_moving_target_07. Step: 450000. Time Elapsed: 689.926 s. Mean Reward: -22.797. Std of Reward: 11.314. Training.
+[INFO] shoot_moving_target_07. Step: 500000. Time Elapsed: 761.994 s. Mean Reward: -17.892. Std of Reward: 12.230. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-499779.onnx
+[INFO] shoot_moving_target_07. Step: 550000. Time Elapsed: 830.967 s. Mean Reward: -20.009. Std of Reward: 15.550. Training.
+[INFO] shoot_moving_target_07. Step: 600000. Time Elapsed: 916.572 s. Mean Reward: -14.945. Std of Reward: 13.647. Training.
+[INFO] shoot_moving_target_07. Step: 650000. Time Elapsed: 983.834 s. Mean Reward: -15.550. Std of Reward: 14.750. Training.
+[INFO] shoot_moving_target_07. Step: 700000. Time Elapsed: 1070.144 s. Mean Reward: -11.334. Std of Reward: 17.403. Training.
+[INFO] shoot_moving_target_07. Step: 750000. Time Elapsed: 1137.688 s. Mean Reward: -11.974. Std of Reward: 15.560. Training.
+[INFO] shoot_moving_target_07. Step: 800000. Time Elapsed: 1222.954 s. Mean Reward: -14.770. Std of Reward: 13.012. Training.
+[INFO] shoot_moving_target_07. Step: 850000. Time Elapsed: 1294.810 s. Mean Reward: -9.552. Std of Reward: 13.319. Training.
+[INFO] shoot_moving_target_07. Step: 900000. Time Elapsed: 1377.393 s. Mean Reward: -0.605. Std of Reward: 17.162. Training.
+[INFO] shoot_moving_target_07. Step: 950000. Time Elapsed: 1449.406 s. Mean Reward: -3.901. Std of Reward: 22.475. Training.
+[INFO] shoot_moving_target_07. Step: 1000000. Time Elapsed: 1528.998 s. Mean Reward: 5.112. Std of Reward: 20.314. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-999875.onnx
+[INFO] shoot_moving_target_07. Step: 1050000. Time Elapsed: 1603.161 s. Mean Reward: 10.152. Std of Reward: 19.546. Training.
+[INFO] shoot_moving_target_07. Step: 1100000. Time Elapsed: 1675.014 s. Mean Reward: 7.829. Std of Reward: 19.762. Training.
+[INFO] shoot_moving_target_07. Step: 1150000. Time Elapsed: 1757.724 s. Mean Reward: 13.245. Std of Reward: 18.193. Training.
+[INFO] shoot_moving_target_07. Step: 1200000. Time Elapsed: 1828.974 s. Mean Reward: 17.273. Std of Reward: 20.057. Training.
+[INFO] shoot_moving_target_07. Step: 1250000. Time Elapsed: 1911.191 s. Mean Reward: 13.160. Std of Reward: 20.814. Training.
+[INFO] shoot_moving_target_07. Step: 1300000. Time Elapsed: 1982.228 s. Mean Reward: 14.379. Std of Reward: 20.483. Training.
+[INFO] shoot_moving_target_07. Step: 1350000. Time Elapsed: 2062.862 s. Mean Reward: 26.612. Std of Reward: 22.331. Training.
+[INFO] shoot_moving_target_07. Step: 1400000. Time Elapsed: 2137.797 s. Mean Reward: 24.552. Std of Reward: 21.300. Training.
+[INFO] shoot_moving_target_07. Step: 1450000. Time Elapsed: 2214.861 s. Mean Reward: 27.302. Std of Reward: 27.241. Training.
+[INFO] shoot_moving_target_07. Step: 1500000. Time Elapsed: 2287.063 s. Mean Reward: 36.431. Std of Reward: 23.103. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-1499947.onnx
+[INFO] shoot_moving_target_07. Step: 1550000. Time Elapsed: 2363.698 s. Mean Reward: 31.617. Std of Reward: 24.176. Training.
+[INFO] shoot_moving_target_07. Step: 1600000. Time Elapsed: 2434.958 s. Mean Reward: 39.645. Std of Reward: 24.855. Training.
+[INFO] shoot_moving_target_07. Step: 1650000. Time Elapsed: 2504.963 s. Mean Reward: 28.878. Std of Reward: 20.854. Training.
+[INFO] shoot_moving_target_07. Step: 1700000. Time Elapsed: 2580.286 s. Mean Reward: 28.222. Std of Reward: 22.103. Training.
+[INFO] shoot_moving_target_07. Step: 1750000. Time Elapsed: 2650.890 s. Mean Reward: 27.727. Std of Reward: 23.363. Training.
+[INFO] shoot_moving_target_07. Step: 1800000. Time Elapsed: 2726.073 s. Mean Reward: 35.396. Std of Reward: 22.203. Training.
+[INFO] shoot_moving_target_07. Step: 1850000. Time Elapsed: 2796.595 s. Mean Reward: 44.754. Std of Reward: 27.176. Training.
+[INFO] shoot_moving_target_07. Step: 1900000. Time Elapsed: 2884.255 s. Mean Reward: 54.301. Std of Reward: 23.306. Training.
+[INFO] shoot_moving_target_07. Step: 1950000. Time Elapsed: 2952.764 s. Mean Reward: 48.558. Std of Reward: 24.992. Training.
+[INFO] shoot_moving_target_07. Step: 2000000. Time Elapsed: 3034.524 s. Mean Reward: 52.882. Std of Reward: 33.530. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-1999787.onnx
+[INFO] shoot_moving_target_07. Step: 2050000. Time Elapsed: 3107.839 s. Mean Reward: 40.166. Std of Reward: 35.604. Training.
+[INFO] shoot_moving_target_07. Step: 2100000. Time Elapsed: 3178.778 s. Mean Reward: 34.917. Std of Reward: 24.183. Training.
+[INFO] shoot_moving_target_07. Step: 2150000. Time Elapsed: 3264.424 s. Mean Reward: 46.167. Std of Reward: 26.117. Training.
+[INFO] shoot_moving_target_07. Step: 2200000. Time Elapsed: 3331.396 s. Mean Reward: 42.852. Std of Reward: 23.190. Training.
+[INFO] shoot_moving_target_07. Step: 2250000. Time Elapsed: 3415.734 s. Mean Reward: 50.475. Std of Reward: 26.848. Training.
+[INFO] shoot_moving_target_07. Step: 2300000. Time Elapsed: 3480.951 s. Mean Reward: 45.413. Std of Reward: 22.488. Training.
+[INFO] shoot_moving_target_07. Step: 2350000. Time Elapsed: 3562.174 s. Mean Reward: 45.824. Std of Reward: 25.647. Training.
+[INFO] shoot_moving_target_07. Step: 2400000. Time Elapsed: 3630.144 s. Mean Reward: 48.991. Std of Reward: 22.552. Training.
+[INFO] shoot_moving_target_07. Step: 2450000. Time Elapsed: 3708.448 s. Mean Reward: 54.171. Std of Reward: 27.975. Training.
+[INFO] shoot_moving_target_07. Step: 2500000. Time Elapsed: 3777.739 s. Mean Reward: 56.097. Std of Reward: 22.362. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-2499859.onnx
+[INFO] shoot_moving_target_07. Step: 2550000. Time Elapsed: 3854.666 s. Mean Reward: 61.037. Std of Reward: 22.362. Training.
+[INFO] shoot_moving_target_07. Step: 2600000. Time Elapsed: 3927.777 s. Mean Reward: 57.653. Std of Reward: 24.341. Training.
+[INFO] shoot_moving_target_07. Step: 2650000. Time Elapsed: 4000.466 s. Mean Reward: 57.777. Std of Reward: 27.068. Training.
+[INFO] shoot_moving_target_07. Step: 2700000. Time Elapsed: 4081.127 s. Mean Reward: 68.209. Std of Reward: 23.064. Training.
+[INFO] shoot_moving_target_07. Step: 2750000. Time Elapsed: 4153.292 s. Mean Reward: 64.866. Std of Reward: 28.801. Training.
+[INFO] shoot_moving_target_07. Step: 2800000. Time Elapsed: 4234.801 s. Mean Reward: 73.619. Std of Reward: 29.686. Training.
+[INFO] shoot_moving_target_07. Step: 2850000. Time Elapsed: 4304.670 s. Mean Reward: 66.947. Std of Reward: 21.400. Training.
+[INFO] shoot_moving_target_07. Step: 2900000. Time Elapsed: 4381.093 s. Mean Reward: 68.267. Std of Reward: 24.279. Training.
+[INFO] shoot_moving_target_07. Step: 2950000. Time Elapsed: 4452.196 s. Mean Reward: 62.182. Std of Reward: 25.505. Training.
+[INFO] shoot_moving_target_07. Step: 3000000. Time Elapsed: 4532.707 s. Mean Reward: 59.784. Std of Reward: 25.217. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-2999955.onnx
+[INFO] shoot_moving_target_07. Step: 3050000. Time Elapsed: 4608.337 s. Mean Reward: 65.729. Std of Reward: 25.524. Training.
+[INFO] shoot_moving_target_07. Step: 3100000. Time Elapsed: 4686.166 s. Mean Reward: 73.851. Std of Reward: 26.296. Training.
+[INFO] shoot_moving_target_07. Step: 3150000. Time Elapsed: 4760.420 s. Mean Reward: 78.636. Std of Reward: 29.622. Training.
+[INFO] shoot_moving_target_07. Step: 3200000. Time Elapsed: 4837.814 s. Mean Reward: 75.757. Std of Reward: 30.960. Training.
+[INFO] shoot_moving_target_07. Step: 3250000. Time Elapsed: 4920.505 s. Mean Reward: 85.661. Std of Reward: 26.116. Training.
+[INFO] shoot_moving_target_07. Step: 3300000. Time Elapsed: 4998.287 s. Mean Reward: 83.739. Std of Reward: 26.367. Training.
+[INFO] shoot_moving_target_07. Step: 3350000. Time Elapsed: 5080.281 s. Mean Reward: 79.037. Std of Reward: 29.233. Training.
+[INFO] shoot_moving_target_07. Step: 3400000. Time Elapsed: 5154.315 s. Mean Reward: 78.424. Std of Reward: 26.939. Training.
+[INFO] shoot_moving_target_07. Step: 3450000. Time Elapsed: 5243.381 s. Mean Reward: 70.021. Std of Reward: 26.522. Training.
+[INFO] shoot_moving_target_07. Step: 3500000. Time Elapsed: 5312.690 s. Mean Reward: 77.202. Std of Reward: 24.042. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-3499899.onnx
+[INFO] shoot_moving_target_07. Step: 3550000. Time Elapsed: 5395.974 s. Mean Reward: 76.733. Std of Reward: 28.630. Training.
+[INFO] shoot_moving_target_07. Step: 3600000. Time Elapsed: 5472.373 s. Mean Reward: 85.227. Std of Reward: 28.501. Training.
+[INFO] shoot_moving_target_07. Step: 3650000. Time Elapsed: 5547.866 s. Mean Reward: 92.244. Std of Reward: 28.255. Training.
+[INFO] shoot_moving_target_07. Step: 3700000. Time Elapsed: 5637.853 s. Mean Reward: 89.279. Std of Reward: 25.231. Training.
+[INFO] shoot_moving_target_07. Step: 3750000. Time Elapsed: 5707.833 s. Mean Reward: 85.987. Std of Reward: 33.865. Training.
+[INFO] shoot_moving_target_07. Step: 3800000. Time Elapsed: 5805.760 s. Mean Reward: 83.542. Std of Reward: 29.534. Training.
+[INFO] shoot_moving_target_07. Step: 3850000. Time Elapsed: 5879.688 s. Mean Reward: 80.771. Std of Reward: 25.274. Training.
+[INFO] shoot_moving_target_07. Step: 3900000. Time Elapsed: 5973.167 s. Mean Reward: 76.710. Std of Reward: 24.864. Training.
+[INFO] shoot_moving_target_07. Step: 3950000. Time Elapsed: 6050.490 s. Mean Reward: 91.643. Std of Reward: 32.549. Training.
+[INFO] shoot_moving_target_07. Step: 4000000. Time Elapsed: 6139.548 s. Mean Reward: 85.078. Std of Reward: 31.692. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-3999963.onnx
+[INFO] shoot_moving_target_07. Step: 4050000. Time Elapsed: 6219.226 s. Mean Reward: 85.875. Std of Reward: 37.925. Training.
+[INFO] shoot_moving_target_07. Step: 4100000. Time Elapsed: 6306.684 s. Mean Reward: 88.241. Std of Reward: 28.948. Training.
+[INFO] shoot_moving_target_07. Step: 4150000. Time Elapsed: 6388.893 s. Mean Reward: 91.559. Std of Reward: 31.496. Training.
+[INFO] shoot_moving_target_07. Step: 4200000. Time Elapsed: 6466.752 s. Mean Reward: 87.614. Std of Reward: 25.109. Training.
+[INFO] shoot_moving_target_07. Step: 4250000. Time Elapsed: 6551.964 s. Mean Reward: 96.375. Std of Reward: 27.527. Training.
+[INFO] shoot_moving_target_07. Step: 4300000. Time Elapsed: 6627.104 s. Mean Reward: 90.190. Std of Reward: 33.078. Training.
+[INFO] shoot_moving_target_07. Step: 4350000. Time Elapsed: 6712.309 s. Mean Reward: 96.067. Std of Reward: 33.666. Training.
+[INFO] shoot_moving_target_07. Step: 4400000. Time Elapsed: 6785.943 s. Mean Reward: 98.456. Std of Reward: 29.558. Training.
+[INFO] shoot_moving_target_07. Step: 4450000. Time Elapsed: 6868.731 s. Mean Reward: 88.940. Std of Reward: 26.867. Training.
+[INFO] shoot_moving_target_07. Step: 4500000. Time Elapsed: 6945.468 s. Mean Reward: 97.828. Std of Reward: 32.731. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-4499803.onnx
+[INFO] shoot_moving_target_07. Step: 4550000. Time Elapsed: 7027.477 s. Mean Reward: 86.856. Std of Reward: 24.672. Training.
+[INFO] shoot_moving_target_07. Step: 4600000. Time Elapsed: 7105.165 s. Mean Reward: 99.899. Std of Reward: 28.900. Training.
+[INFO] shoot_moving_target_07. Step: 4650000. Time Elapsed: 7184.924 s. Mean Reward: 99.994. Std of Reward: 28.087. Training.
+[INFO] shoot_moving_target_07. Step: 4700000. Time Elapsed: 7261.470 s. Mean Reward: 95.892. Std of Reward: 23.928. Training.
+[INFO] shoot_moving_target_07. Step: 4750000. Time Elapsed: 7337.995 s. Mean Reward: 115.892. Std of Reward: 31.470. Training.
+[INFO] shoot_moving_target_07. Step: 4800000. Time Elapsed: 7420.514 s. Mean Reward: 120.946. Std of Reward: 32.168. Training.
+[INFO] shoot_moving_target_07. Step: 4850000. Time Elapsed: 7498.751 s. Mean Reward: 117.535. Std of Reward: 28.007. Training.
+[INFO] shoot_moving_target_07. Step: 4900000. Time Elapsed: 7581.500 s. Mean Reward: 117.017. Std of Reward: 29.548. Training.
+[INFO] shoot_moving_target_07. Step: 4950000. Time Elapsed: 7655.844 s. Mean Reward: 110.060. Std of Reward: 24.980. Training.
+[INFO] shoot_moving_target_07. Step: 5000000. Time Elapsed: 7744.926 s. Mean Reward: 114.355. Std of Reward: 26.551. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-4999875.onnx
+[INFO] shoot_moving_target_07. Step: 5050000. Time Elapsed: 7814.889 s. Mean Reward: 120.648. Std of Reward: 30.887. Training.
+[INFO] shoot_moving_target_07. Step: 5100000. Time Elapsed: 7903.208 s. Mean Reward: 113.430. Std of Reward: 23.816. Training.
+[INFO] shoot_moving_target_07. Step: 5150000. Time Elapsed: 7982.795 s. Mean Reward: 116.036. Std of Reward: 24.679. Training.
+[INFO] shoot_moving_target_07. Step: 5200000. Time Elapsed: 8057.821 s. Mean Reward: 116.784. Std of Reward: 31.378. Training.
+[INFO] shoot_moving_target_07. Step: 5250000. Time Elapsed: 8147.885 s. Mean Reward: 125.588. Std of Reward: 29.550. Training.
+[INFO] shoot_moving_target_07. Step: 5300000. Time Elapsed: 8215.710 s. Mean Reward: 116.536. Std of Reward: 21.910. Training.
+[INFO] shoot_moving_target_07. Step: 5350000. Time Elapsed: 8302.908 s. Mean Reward: 114.703. Std of Reward: 30.017. Training.
+[INFO] shoot_moving_target_07. Step: 5400000. Time Elapsed: 8371.618 s. Mean Reward: 111.619. Std of Reward: 33.658. Training.
+[INFO] shoot_moving_target_07. Step: 5450000. Time Elapsed: 8459.315 s. Mean Reward: 111.139. Std of Reward: 29.386. Training.
+[INFO] shoot_moving_target_07. Step: 5500000. Time Elapsed: 8533.208 s. Mean Reward: 109.593. Std of Reward: 30.219. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-5499971.onnx
+[INFO] shoot_moving_target_07. Step: 5550000. Time Elapsed: 8625.429 s. Mean Reward: 114.275. Std of Reward: 31.871. Training.
+[INFO] shoot_moving_target_07. Step: 5600000. Time Elapsed: 8699.948 s. Mean Reward: 107.701. Std of Reward: 39.050. Training.
+[INFO] shoot_moving_target_07. Step: 5650000. Time Elapsed: 8781.828 s. Mean Reward: 122.121. Std of Reward: 31.662. Training.
+[INFO] shoot_moving_target_07. Step: 5700000. Time Elapsed: 8858.276 s. Mean Reward: 123.455. Std of Reward: 33.125. Training.
+[INFO] shoot_moving_target_07. Step: 5750000. Time Elapsed: 8933.004 s. Mean Reward: 115.510. Std of Reward: 30.853. Training.
+[INFO] shoot_moving_target_07. Step: 5800000. Time Elapsed: 9018.538 s. Mean Reward: 131.380. Std of Reward: 34.223. Training.
+[INFO] shoot_moving_target_07. Step: 5850000. Time Elapsed: 9093.483 s. Mean Reward: 129.155. Std of Reward: 29.551. Training.
+[INFO] shoot_moving_target_07. Step: 5900000. Time Elapsed: 9178.955 s. Mean Reward: 126.713. Std of Reward: 32.033. Training.
+[INFO] shoot_moving_target_07. Step: 5950000. Time Elapsed: 9252.769 s. Mean Reward: 124.601. Std of Reward: 30.320. Training.
+[INFO] shoot_moving_target_07. Step: 6000000. Time Elapsed: 9335.862 s. Mean Reward: 110.177. Std of Reward: 27.223. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-5999787.onnx
+[INFO] shoot_moving_target_07. Step: 6050000. Time Elapsed: 9412.795 s. Mean Reward: 120.201. Std of Reward: 29.278. Training.
+[INFO] shoot_moving_target_07. Step: 6100000. Time Elapsed: 9495.477 s. Mean Reward: 114.334. Std of Reward: 24.731. Training.
+[INFO] shoot_moving_target_07. Step: 6150000. Time Elapsed: 9573.150 s. Mean Reward: 119.353. Std of Reward: 28.018. Training.
+[INFO] shoot_moving_target_07. Step: 6200000. Time Elapsed: 9652.730 s. Mean Reward: 114.871. Std of Reward: 26.685. Training.
+[INFO] shoot_moving_target_07. Step: 6250000. Time Elapsed: 9729.004 s. Mean Reward: 112.583. Std of Reward: 29.594. Training.
+[INFO] shoot_moving_target_07. Step: 6300000. Time Elapsed: 9806.286 s. Mean Reward: 125.097. Std of Reward: 29.163. Training.
+[INFO] shoot_moving_target_07. Step: 6350000. Time Elapsed: 9888.573 s. Mean Reward: 128.931. Std of Reward: 30.009. Training.
+[INFO] shoot_moving_target_07. Step: 6400000. Time Elapsed: 9966.306 s. Mean Reward: 129.090. Std of Reward: 32.328. Training.
+[INFO] shoot_moving_target_07. Step: 6450000. Time Elapsed: 10048.671 s. Mean Reward: 127.973. Std of Reward: 36.086. Training.
+[INFO] shoot_moving_target_07. Step: 6500000. Time Elapsed: 10122.675 s. Mean Reward: 134.689. Std of Reward: 30.491. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-6499883.onnx
+[INFO] shoot_moving_target_07. Step: 6550000. Time Elapsed: 10212.319 s. Mean Reward: 134.465. Std of Reward: 27.987. Training.
+[INFO] shoot_moving_target_07. Step: 6600000. Time Elapsed: 10282.668 s. Mean Reward: 139.548. Std of Reward: 27.304. Training.
+[INFO] shoot_moving_target_07. Step: 6650000. Time Elapsed: 10366.174 s. Mean Reward: 128.076. Std of Reward: 36.035. Training.
+[INFO] shoot_moving_target_07. Step: 6700000. Time Elapsed: 10442.821 s. Mean Reward: 131.182. Std of Reward: 27.386. Training.
+[INFO] shoot_moving_target_07. Step: 6750000. Time Elapsed: 10517.569 s. Mean Reward: 140.777. Std of Reward: 28.086. Training.
+[INFO] shoot_moving_target_07. Step: 6800000. Time Elapsed: 10606.735 s. Mean Reward: 129.378. Std of Reward: 30.329. Training.
+[INFO] shoot_moving_target_07. Step: 6850000. Time Elapsed: 10676.985 s. Mean Reward: 143.864. Std of Reward: 29.653. Training.
+[INFO] shoot_moving_target_07. Step: 6900000. Time Elapsed: 10767.133 s. Mean Reward: 141.034. Std of Reward: 27.913. Training.
+[INFO] shoot_moving_target_07. Step: 6950000. Time Elapsed: 10836.572 s. Mean Reward: 133.840. Std of Reward: 25.156. Training.
+[INFO] shoot_moving_target_07. Step: 7000000. Time Elapsed: 10928.269 s. Mean Reward: 136.982. Std of Reward: 23.417. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-6999883.onnx
+[INFO] shoot_moving_target_07. Step: 7050000. Time Elapsed: 11007.438 s. Mean Reward: 139.018. Std of Reward: 20.006. Training.
+[INFO] shoot_moving_target_07. Step: 7100000. Time Elapsed: 11098.018 s. Mean Reward: 134.448. Std of Reward: 26.277. Training.
+[INFO] shoot_moving_target_07. Step: 7150000. Time Elapsed: 11177.608 s. Mean Reward: 134.252. Std of Reward: 31.984. Training.
+[INFO] shoot_moving_target_07. Step: 7200000. Time Elapsed: 11265.504 s. Mean Reward: 137.680. Std of Reward: 24.257. Training.
+[INFO] shoot_moving_target_07. Step: 7250000. Time Elapsed: 11344.453 s. Mean Reward: 140.269. Std of Reward: 30.344. Training.
+[INFO] shoot_moving_target_07. Step: 7300000. Time Elapsed: 11419.100 s. Mean Reward: 146.093. Std of Reward: 25.543. Training.
+[INFO] shoot_moving_target_07. Step: 7350000. Time Elapsed: 11504.916 s. Mean Reward: 147.105. Std of Reward: 31.310. Training.
+[INFO] shoot_moving_target_07. Step: 7400000. Time Elapsed: 11579.593 s. Mean Reward: 143.220. Std of Reward: 26.073. Training.
+[INFO] shoot_moving_target_07. Step: 7450000. Time Elapsed: 11665.028 s. Mean Reward: 138.742. Std of Reward: 25.196. Training.
+[INFO] shoot_moving_target_07. Step: 7500000. Time Elapsed: 11739.031 s. Mean Reward: 148.160. Std of Reward: 29.394. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-7499827.onnx
+[INFO] shoot_moving_target_07. Step: 7550000. Time Elapsed: 11821.985 s. Mean Reward: 151.297. Std of Reward: 28.880. Training.
+[INFO] shoot_moving_target_07. Step: 7600000. Time Elapsed: 11898.492 s. Mean Reward: 154.780. Std of Reward: 27.224. Training.
+[INFO] shoot_moving_target_07. Step: 7650000. Time Elapsed: 11980.841 s. Mean Reward: 148.600. Std of Reward: 25.188. Training.
+[INFO] shoot_moving_target_07. Step: 7700000. Time Elapsed: 12058.997 s. Mean Reward: 146.277. Std of Reward: 27.682. Training.
+[INFO] shoot_moving_target_07. Step: 7750000. Time Elapsed: 12138.982 s. Mean Reward: 144.874. Std of Reward: 27.468. Training.
+[INFO] shoot_moving_target_07. Step: 7800000. Time Elapsed: 12215.704 s. Mean Reward: 145.247. Std of Reward: 32.791. Training.
+[INFO] shoot_moving_target_07. Step: 7850000. Time Elapsed: 12292.943 s. Mean Reward: 147.249. Std of Reward: 27.541. Training.
+[INFO] shoot_moving_target_07. Step: 7900000. Time Elapsed: 12379.647 s. Mean Reward: 141.361. Std of Reward: 30.117. Training.
+[INFO] shoot_moving_target_07. Step: 7950000. Time Elapsed: 12461.122 s. Mean Reward: 148.948. Std of Reward: 30.657. Training.
+[INFO] shoot_moving_target_07. Step: 8000000. Time Elapsed: 12548.308 s. Mean Reward: 147.488. Std of Reward: 30.141. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-7999987.onnx
+[INFO] shoot_moving_target_07. Step: 8050000. Time Elapsed: 12627.127 s. Mean Reward: 148.649. Std of Reward: 29.350. Training.
+[INFO] shoot_moving_target_07. Step: 8100000. Time Elapsed: 12720.864 s. Mean Reward: 146.449. Std of Reward: 30.864. Training.
+[INFO] shoot_moving_target_07. Step: 8150000. Time Elapsed: 12795.045 s. Mean Reward: 154.992. Std of Reward: 33.100. Training.
+[INFO] shoot_moving_target_07. Step: 8200000. Time Elapsed: 12882.318 s. Mean Reward: 155.726. Std of Reward: 33.219. Training.
+[INFO] shoot_moving_target_07. Step: 8250000. Time Elapsed: 12962.304 s. Mean Reward: 154.819. Std of Reward: 28.139. Training.
+[INFO] shoot_moving_target_07. Step: 8300000. Time Elapsed: 13037.854 s. Mean Reward: 160.452. Std of Reward: 35.554. Training.
+[INFO] shoot_moving_target_07. Step: 8350000. Time Elapsed: 13130.373 s. Mean Reward: 159.534. Std of Reward: 28.572. Training.
+[INFO] shoot_moving_target_07. Step: 8400000. Time Elapsed: 13202.574 s. Mean Reward: 157.303. Std of Reward: 27.022. Training.
+[INFO] shoot_moving_target_07. Step: 8450000. Time Elapsed: 13295.990 s. Mean Reward: 158.411. Std of Reward: 27.078. Training.
+[INFO] shoot_moving_target_07. Step: 8500000. Time Elapsed: 13366.573 s. Mean Reward: 163.544. Std of Reward: 29.676. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-8499827.onnx
+[INFO] shoot_moving_target_07. Step: 8550000. Time Elapsed: 13456.733 s. Mean Reward: 164.279. Std of Reward: 32.705. Training.
+[INFO] shoot_moving_target_07. Step: 8600000. Time Elapsed: 13531.529 s. Mean Reward: 164.821. Std of Reward: 29.024. Training.
+[INFO] shoot_moving_target_07. Step: 8650000. Time Elapsed: 13617.266 s. Mean Reward: 155.533. Std of Reward: 29.982. Training.
+[INFO] shoot_moving_target_07. Step: 8700000. Time Elapsed: 13692.147 s. Mean Reward: 155.704. Std of Reward: 22.475. Training.
+[INFO] shoot_moving_target_07. Step: 8750000. Time Elapsed: 13775.142 s. Mean Reward: 156.125. Std of Reward: 27.716. Training.
+[INFO] shoot_moving_target_07. Step: 8800000. Time Elapsed: 13852.951 s. Mean Reward: 152.131. Std of Reward: 25.007. Training.
+[INFO] shoot_moving_target_07. Step: 8850000. Time Elapsed: 13929.234 s. Mean Reward: 158.996. Std of Reward: 26.848. Training.
+[INFO] shoot_moving_target_07. Step: 8900000. Time Elapsed: 14016.495 s. Mean Reward: 160.142. Std of Reward: 25.538. Training.
+[INFO] shoot_moving_target_07. Step: 8950000. Time Elapsed: 14092.662 s. Mean Reward: 164.172. Std of Reward: 32.032. Training.
+[INFO] shoot_moving_target_07. Step: 9000000. Time Elapsed: 14179.886 s. Mean Reward: 158.378. Std of Reward: 29.435. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-8999899.onnx
+[INFO] shoot_moving_target_07. Step: 9050000. Time Elapsed: 14256.462 s. Mean Reward: 151.974. Std of Reward: 34.610. Training.
+[INFO] shoot_moving_target_07. Step: 9100000. Time Elapsed: 14341.419 s. Mean Reward: 149.465. Std of Reward: 31.978. Training.
+[INFO] shoot_moving_target_07. Step: 9150000. Time Elapsed: 14421.115 s. Mean Reward: 160.947. Std of Reward: 32.771. Training.
+[INFO] shoot_moving_target_07. Step: 9200000. Time Elapsed: 14507.560 s. Mean Reward: 156.249. Std of Reward: 26.875. Training.
+[INFO] shoot_moving_target_07. Step: 9250000. Time Elapsed: 14588.572 s. Mean Reward: 166.177. Std of Reward: 30.710. Training.
+[INFO] shoot_moving_target_07. Step: 9300000. Time Elapsed: 14672.331 s. Mean Reward: 161.035. Std of Reward: 26.731. Training.
+[INFO] shoot_moving_target_07. Step: 9350000. Time Elapsed: 14752.250 s. Mean Reward: 167.725. Std of Reward: 20.952. Training.
+[INFO] shoot_moving_target_07. Step: 9400000. Time Elapsed: 14832.485 s. Mean Reward: 167.896. Std of Reward: 26.814. Training.
+[INFO] shoot_moving_target_07. Step: 9450000. Time Elapsed: 14920.467 s. Mean Reward: 173.952. Std of Reward: 29.093. Training.
+[INFO] shoot_moving_target_07. Step: 9500000. Time Elapsed: 15011.757 s. Mean Reward: 172.450. Std of Reward: 26.675. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-9499995.onnx
+[INFO] shoot_moving_target_07. Step: 9550000. Time Elapsed: 15103.562 s. Mean Reward: 166.111. Std of Reward: 29.632. Training.
+[INFO] shoot_moving_target_07. Step: 9600000. Time Elapsed: 15186.082 s. Mean Reward: 170.888. Std of Reward: 37.203. Training.
+[INFO] shoot_moving_target_07. Step: 9650000. Time Elapsed: 15281.136 s. Mean Reward: 163.714. Std of Reward: 32.198. Training.
+[INFO] shoot_moving_target_07. Step: 9700000. Time Elapsed: 15355.615 s. Mean Reward: 161.847. Std of Reward: 34.150. Training.
+[INFO] shoot_moving_target_07. Step: 9750000. Time Elapsed: 15447.524 s. Mean Reward: 169.210. Std of Reward: 36.957. Training.
+[INFO] shoot_moving_target_07. Step: 9800000. Time Elapsed: 15527.970 s. Mean Reward: 158.926. Std of Reward: 37.040. Training.
+[INFO] shoot_moving_target_07. Step: 9850000. Time Elapsed: 15606.981 s. Mean Reward: 152.246. Std of Reward: 33.517. Training.
+[INFO] shoot_moving_target_07. Step: 9900000. Time Elapsed: 15702.015 s. Mean Reward: 156.024. Std of Reward: 28.780. Training.
+[INFO] shoot_moving_target_07. Step: 9950000. Time Elapsed: 15776.729 s. Mean Reward: 169.082. Std of Reward: 28.142. Training.
+[INFO] shoot_moving_target_07. Step: 10000000. Time Elapsed: 15873.139 s. Mean Reward: 163.311. Std of Reward: 29.093. Training.
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-9999811.onnx
+[INFO] Exported results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-10005699.onnx
+[INFO] Copied results/shoot_moving_target_07/shoot_moving_target_07/shoot_moving_target_07-10005699.onnx to results/shoot_moving_target_07/shoot_moving_target_07.onnx.
