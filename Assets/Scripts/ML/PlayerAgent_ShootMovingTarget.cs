@@ -14,6 +14,7 @@ public class PlayerAgent_ShootMovingTarget : Agent
     public GameObject target;
     public bool useManualInput = false;
     public bool useCamera = true;
+    private bool useGymObject = true;
 
     public float desiredTargetDistance = 15f;
 
@@ -69,6 +70,7 @@ public class PlayerAgent_ShootMovingTarget : Agent
 
     [Header("Counters")]
     public int timesReachedObjective = 0;
+    public int timesGotHit = 0;
 
     public override void Initialize()
     {
@@ -78,9 +80,12 @@ public class PlayerAgent_ShootMovingTarget : Agent
             MaxStep = 0;
         }
 
-        gymObject = transform.parent.gameObject;
-        target = gymObject.transform.Find("Target").gameObject;
-        targetNavMeshAgent = target.GetComponent<NavMeshAgent>();
+        if (useGymObject)
+        {
+            gymObject = transform.parent.gameObject;
+            target = gymObject.transform.Find("Target").gameObject;
+            targetNavMeshAgent = target.GetComponent<NavMeshAgent>();
+        }
 
         tankMovement = GetComponent<TankMovement>();
         tankMovement.SetManualInput(useManualInput);
@@ -111,8 +116,21 @@ public class PlayerAgent_ShootMovingTarget : Agent
 
     private void SetupMLAgents()
     {
+        // Decision Requester
+        if (GetComponent<DecisionRequester>() == null)
+        {
+            DecisionRequester decisionRequester = gameObject.AddComponent<DecisionRequester>();
+            decisionRequester.DecisionPeriod = 5;
+            decisionRequester.TakeActionsBetweenDecisions = false;
+        }
+
         // Behavior Parameters
         BehaviorParameters behaviorParameters = GetComponent<BehaviorParameters>();
+        if (behaviorParameters == null)
+        {
+            behaviorParameters = gameObject.AddComponent<BehaviorParameters>();
+        }
+
         ActionSpec actionSpec = new ActionSpec(0, new Int32[] { discreteMovmentArray.Length, discreteMovmentArray.Length, 2, 3 });
         behaviorParameters.BrainParameters.ActionSpec = actionSpec;
 
@@ -156,47 +174,88 @@ public class PlayerAgent_ShootMovingTarget : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // target position
-        if (useTargetPositionObservation)
-            sensor.AddObservation(target.transform.position);
-
-        // agent position
-        if (useAgentPositionObservation)
-            sensor.AddObservation(transform.position);
-
-        // forward vector
-        sensor.AddObservation(transform.forward);
-
-        // direction towards target
-        Vector3 directionTowardsTarget = target.transform.position - transform.position;
-        sensor.AddObservation(directionTowardsTarget.normalized);
-
-        // angle towards target
-        float angleTowardsTarget = Vector3.SignedAngle(directionTowardsTarget, tankMovement.m_movingAvgVel, Vector3.up) / 180f;
-        sensor.AddObservation(angleTowardsTarget);
-
-        // distance to target
-        sensor.AddObservation(Vector3.Distance(transform.position, target.transform.position));
-
-        // velocity
-        sensor.AddObservation(tankMovement.m_movingAvgVel.normalized);
-
-        // velocity angle compared to forward
-        sensor.AddObservation(Vector3.SignedAngle(transform.forward, tankMovement.m_movingAvgVel, Vector3.up) / 180f);
-
-        // velocity magnitude
-        sensor.AddObservation(tankMovement.m_movingAvgVel.magnitude);
-
-        // angle from target front to me
-        if (useAngleFromTargetFrontToMeObservation)
-            sensor.AddObservation(Mathf.Abs(Vector3.SignedAngle(target.transform.forward, directionTowardsTarget, Vector3.up)) / 180f);
-
-        // target velocity
-        if (useTargetVelocityObservation)
+        if (target != null)
         {
-            if (targetNavMeshAgent != null)
-                sensor.AddObservation(targetNavMeshAgent.velocity.normalized);
-            else
+            // target position
+            if (useTargetPositionObservation)
+                sensor.AddObservation(target.transform.position);
+
+            // agent position
+            if (useAgentPositionObservation)
+                sensor.AddObservation(transform.position);
+
+            // forward vector
+            sensor.AddObservation(transform.forward);
+
+            // direction towards target
+            Vector3 directionTowardsTarget = target.transform.position - transform.position;
+            sensor.AddObservation(directionTowardsTarget.normalized);
+
+            // angle towards target
+            float angleTowardsTarget = Vector3.SignedAngle(directionTowardsTarget, tankMovement.m_movingAvgVel, Vector3.up) / 180f;
+            sensor.AddObservation(angleTowardsTarget);
+
+            // distance to target
+            sensor.AddObservation(Vector3.Distance(transform.position, target.transform.position));
+
+            // velocity
+            sensor.AddObservation(tankMovement.m_movingAvgVel.normalized);
+
+            // velocity angle compared to forward
+            sensor.AddObservation(Vector3.SignedAngle(transform.forward, tankMovement.m_movingAvgVel, Vector3.up) / 180f);
+
+            // velocity magnitude
+            sensor.AddObservation(tankMovement.m_movingAvgVel.magnitude);
+
+            // angle from target front to me
+            if (useAngleFromTargetFrontToMeObservation)
+                sensor.AddObservation(Mathf.Abs(Vector3.SignedAngle(target.transform.forward, directionTowardsTarget, Vector3.up)) / 180f);
+
+            // target velocity
+            if (useTargetVelocityObservation)
+            {
+                if (targetNavMeshAgent != null)
+                    sensor.AddObservation(targetNavMeshAgent.velocity.normalized);
+                else
+                    sensor.AddObservation(Vector3.zero);
+            }
+        } else
+        {
+            // target position
+            if (useTargetPositionObservation)
+                sensor.AddObservation(Vector3.zero);
+
+            // agent position
+            if (useAgentPositionObservation)
+                sensor.AddObservation(transform.position);
+
+            // forward vector
+            sensor.AddObservation(transform.forward);
+
+            // direction towards target
+            sensor.AddObservation(Vector3.zero);
+
+            // angle towards target
+            sensor.AddObservation(0f);
+
+            // distance to target
+            sensor.AddObservation(0f);
+
+            // velocity
+            sensor.AddObservation(tankMovement.m_movingAvgVel.normalized);
+
+            // velocity angle compared to forward
+            sensor.AddObservation(Vector3.SignedAngle(transform.forward, tankMovement.m_movingAvgVel, Vector3.up) / 180f);
+
+            // velocity magnitude
+            sensor.AddObservation(tankMovement.m_movingAvgVel.magnitude);
+
+            // angle from target front to me
+            if (useAngleFromTargetFrontToMeObservation)
+                sensor.AddObservation(0f);
+
+            // target velocity
+            if (useTargetVelocityObservation)
                 sensor.AddObservation(Vector3.zero);
         }
 
@@ -209,7 +268,10 @@ public class PlayerAgent_ShootMovingTarget : Agent
             if (hit)
             {
                 sensor.AddObservation(hitInfo.distance);
-                sensor.AddObservation(hitInfo.collider.gameObject.layer);
+                // if layer is players, then change it to targets
+                int layer = hitInfo.collider.gameObject.layer;
+                layer = layer == LayerMask.NameToLayer("Players") ? LayerMask.NameToLayer("Targets") : layer;
+                sensor.AddObservation(layer);
             }
             else
             {
@@ -280,6 +342,27 @@ public class PlayerAgent_ShootMovingTarget : Agent
         {
             cameraControl.m_Targets[cameraControl.m_Targets.Length - 2] = target.transform;
         }
+
+        if (target == null)
+        {
+            target = GameObject.Find("Tank(Clone)");
+            if (target != null)
+            {
+                targetNavMeshAgent = target.GetComponent<NavMeshAgent>();
+            }
+        }
+
+        if (tankShooting == null)
+        {
+            tankShooting = GetComponent<TankShooting>();
+            tankShooting.SetAsAI();
+        }
+
+        if (tankMovement == null)
+        {
+            tankMovement = GetComponent<TankMovement>();
+            tankMovement.SetManualInput(useManualInput);
+        }
     }
 
     private void FixedUpdate()
@@ -296,7 +379,7 @@ public class PlayerAgent_ShootMovingTarget : Agent
     private void UpdatePenalties()
     {
         // not moving penalty
-        if (tankMovement.m_movingAvgVel.magnitude < 0.05f)
+        if (tankMovement.m_movingAvgVel.magnitude < 0.05f && Academy.Instance.IsCommunicatorOn)
         {
             ++currentStepsNotMoving;
             AddReward(notMovingPenalty);
@@ -453,12 +536,31 @@ public class PlayerAgent_ShootMovingTarget : Agent
     public void HitTarget(bool endEpisode = false)
     {
         ++timesReachedObjective;
-        Debug.Log(gymObject.transform.name + ": Hit Target (total " + timesReachedObjective + ")");
+        if (gymObject != null)
+        {
+            Debug.Log(gymObject.transform.name + ": Hit Target (total " + timesReachedObjective + ")");
+        } else
+        {
+            Debug.Log(transform.name + ": Hit Target (total " + timesReachedObjective + ")");
+        }
         AddReward(objectiveReward);
 
         if (endEpisode)
         {
             EndEpisode();
+        }
+    }
+
+    public void GetHit()
+    {
+        ++timesGotHit;
+        if (gymObject != null)
+        {
+            Debug.Log(gymObject.transform.name + ": Got Hit (total " + timesGotHit + ")");
+        }
+        else
+        {
+            Debug.Log(transform.name + ": Got Hit (total " + timesGotHit + ")");
         }
     }
 
@@ -489,5 +591,45 @@ public class PlayerAgent_ShootMovingTarget : Agent
         {
             Debug.DrawRay(transform.position + transform.up * raycastHeight, rayDir * length, Color.magenta);
         }
+    }
+
+    public void SetupForTankFight(string behaviourName, Unity.Barracuda.NNModel model)
+    {
+        useCamera = false;
+        useManualInput = false;
+        useGymObject = false;
+        useBulletPositionObservation = false; // always false
+        useBulletVelocityMagnitudeObservation = true; // use for one and both
+        useBulletVelocityObservation = true; // use only for both
+        useAngleFromTargetFrontToMeObservation = false;
+
+        Debug.Log("Call initialize in SetupForTankFight");
+        Initialize();
+        LazyInitialize();
+
+        //Transform targetTransform = transform.root.Find("Tank(Clone)");
+
+        //if (targetTransform != null)
+        //{
+        //    target = targetTransform.gameObject;
+        //    targetNavMeshAgent = target.GetComponent<NavMeshAgent>();
+        //}
+
+        target = GameObject.Find("Tank(Clone)");
+        if (target != null)
+        {
+            targetNavMeshAgent = target.GetComponent<NavMeshAgent>();
+        }
+
+        //SetupMLAgents();
+
+        SetModel(behaviourName, model);
+        //GetComponent<BehaviorParameters>().Model = model;
+    }
+
+    public string GetBehaviourName()
+    {
+        BehaviorParameters behaviorParameters = GetComponent<BehaviorParameters>();
+        return behaviorParameters.Model.name;
     }
 }

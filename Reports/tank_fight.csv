@@ -1,0 +1,33 @@
+id,arch,obs,time,rounds_won,times_hit,times_got_hit,notes
+shoot_moving_target_v2_01,1x128,na,354.3039,16,54,36,nu prea e tactic
+shoot_moving_target_v2_02,1x256,na,286.458,17,59,31,are uneori incercari sa flankeze
+shoot_moving_target_v2_03,1x512,na,393.5259,10,47,45,are mai multe incercari de a flanka
+shoot_moving_target_v2_04,3x128,na,381.8488,17,60,33,nu prea e tactic
+shoot_moving_target_v2_05,3x256,na,368.9066,15,55,38,are tentative sa se retraga si sa flankeze
+shoot_moving_target_v2_06,3x512,na,598.802,15,56,37,are tentativa sa fuga si dupa sa flankeze
+shoot_moving_target_v2_07,5x128,na,345.1217,14,55,38,nu prea e tactic
+shoot_moving_target_v2_08,5x256,na,448.2226,17,55,36,nu prea e tactic
+shoot_moving_target_v2_09,5x512,na,499.2554,9,42,43,nu prea e tactic
+shoot_moving_target_v2_10,7x128,na,359.0904,13,54,34,nu prea e tactic
+shoot_moving_target_v2_11,7x256,na,424.311,16,56,37,nu prea e tactic
+shoot_moving_target_v2_12,7x512,na,719.5594,7,30,50,"se joaca de-a soarecele si pisica, sta cu spatele la inamic"
+shoot_moving_target_01,1x128,both,365.2744,12,50,42,
+shoot_moving_target_02,1x128,one,345.7903,20,61,23,
+shoot_moving_target_03,1x128,none,342.9979,18,58,26,are tendinte sa figa sau sa flankeze
+shoot_moving_target_04,1x256,none,342.3145,15,56,39,
+shoot_moving_target_05,1x512,none,336.0863,18,60,33,
+shoot_moving_target_06,3x128,both,403.5634,15,59,38,
+shoot_moving_target_07,3x128,one,401.1723,18,58,28,
+shoot_moving_target_08,3x128,none,327.6781,18,59,29,
+shoot_moving_target_09,3x256,none,315.368,14,56,38,
+shoot_moving_target_10,3x512,none,340.9718,14,53,32,
+shoot_moving_target_11,5x128,none,363.3622,14,51,37,
+shoot_moving_target_12,5x128,both,471.5027,3,37,59,
+shoot_moving_target_13,5x128,one,418.5623,8,46,48,
+shoot_moving_target_14,5x256,none,516.4233,13,52,40,cam fuge de dujman
+shoot_moving_target_15,5x512,none,428.2677,14,57,35,
+shoot_moving_target_16,7x128,both,626.258,10,44,43,
+shoot_moving_target_17,7x128,one,392.0327,16,62,32,
+shoot_moving_target_18,7x128,none,458.6925,16,62,34,
+shoot_moving_target_19,7x256,none,425.0882,15,56,38,
+shoot_moving_target_20,7x512,none,375.2268,15,54,32,

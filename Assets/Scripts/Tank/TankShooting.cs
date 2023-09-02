@@ -145,6 +145,7 @@ public class TankShooting : MonoBehaviour
             shellExplosionInstance.SetPlayerAgentShootMoving(m_playerAgentShootMoving);
             shellExplosionInstance.m_TankMask |= (1 << LayerMask.NameToLayer("Targets"));
             shellExplosionInstance.m_TankMask |= (1 << LayerMask.NameToLayer("Default"));
+            shellExplosionInstance.m_TankMask |= (1 << LayerMask.NameToLayer("Players"));
         }
 
         // Set the shell's velocity to the launch force in the fire position's forward direction.

@@ -978,7 +978,7 @@ MonoBehaviour:
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 3}
-  m_InitialNumLives: 3
+  m_InitialNumLives: 1
 --- !u!114 &11417496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,8 +1001,8 @@ MonoBehaviour:
   m_MinLaunchForce: 15
   m_MaxLaunchForce: 30
   m_MaxChargeTime: 0.75
-  m_maxAmmo: 50
-  m_cooldownTime: 5
+  m_maxAmmo: 100
+  m_cooldownTime: 2.5
 --- !u!195 &432309641
 NavMeshAgent:
   m_ObjectHideFlags: 0

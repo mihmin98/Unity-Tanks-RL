@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System.Threading;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 
 static class RandomExtensions
 {
@@ -137,6 +139,13 @@ public class GameManager : MonoBehaviour
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
     public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
 
+    [Header("ML Agent")]
+    public bool m_setHumanAsMLAgent = false;
+    public string m_behaviourName = "";
+    public Unity.Barracuda.NNModel m_agentModel = null;
+    public int m_desiredNumberOfRounds = 10;
+    public float m_timeScale= 1f;
+    private float m_elapsedTime = 0f;
 
 
     public static float m_SpeedMultiplier = 1.0f;      // Speed multiplier for faster simulation
@@ -221,6 +230,11 @@ public class GameManager : MonoBehaviour
 
         // Once the tanks have been created and the camera is using them as targets, start the game.
         StartCoroutine(GameLoop());
+
+        if (m_setHumanAsMLAgent)
+        {
+            Time.timeScale = m_timeScale;
+        }
     }
 
     /// <TEST STUFF requests>
@@ -277,6 +291,8 @@ public class GameManager : MonoBehaviour
         {
             m_testingSystem.CustomUpdate();
         }
+
+        m_elapsedTime += Time.deltaTime;
     }
 
     // This is used to gather data in the global blackbox and make everything visible from environment to the AI side
@@ -413,7 +429,7 @@ public class GameManager : MonoBehaviour
                 int playerId = i;
                 if (spawnAsHuman)
                 {
-                    m_Tanks[i].SetPlayerAsHuman(playerId, m_AIGlobalBlackBox);
+                    m_Tanks[i].SetPlayerAsHuman(playerId, m_AIGlobalBlackBox, m_setHumanAsMLAgent, m_behaviourName, m_agentModel);
                     m_Tanks[i].m_PlayerColor = colorsToUseForHumans[i];
                 }
                 else
@@ -541,6 +557,25 @@ public class GameManager : MonoBehaviour
         // If there is a winner, increment their score.
         if (m_RoundWinner != null)
             m_RoundWinner.m_Wins++;
+
+        Debug.Log("Ended Round: " + m_RoundNumber + "\nElapsed Time: " + m_elapsedTime);
+        if (m_setHumanAsMLAgent && m_RoundNumber == m_desiredNumberOfRounds)
+        {
+            foreach (TankManager tmanager in m_Tanks)
+            {
+                string name = tmanager.m_Instance.name;
+                int wins = tmanager.m_Wins;
+                PlayerAgent_ShootMovingTarget agent = tmanager.m_Instance.GetComponent<PlayerAgent_ShootMovingTarget>();
+                if (agent != null)
+                {
+                    Debug.Log("Time: " + m_elapsedTime);
+                    Debug.Log(agent.GetBehaviourName() + ": " + wins + " wins");
+                    Debug.Log("Agent: hit the target " + agent.timesReachedObjective + " times; got hit by the target " + agent.timesGotHit);
+                    Debug.Log(agent.GetBehaviourName() + ": " + m_elapsedTime + ", " + wins + ", " + agent.timesReachedObjective + ", " + agent.timesGotHit);
+                }
+            }
+            EditorApplication.ExitPlaymode();
+        }
 
         // Now the winner's score has been incremented, see if someone has one the game.
         m_GameWinner = GetGameWinner();

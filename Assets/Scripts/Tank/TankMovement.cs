@@ -229,6 +229,6 @@ public class TankMovement : MonoBehaviour
         m_ManualInput = value;
     }
 
-    public void SetMovementValue(float value) { m_MovementInputValue = Mathf.Clamp(value, -1f, 1f); }
-    public void SetTurningValue(float value) { m_TurnInputValue = Mathf.Clamp(value, -1f, 1f); }
+    public void SetMovementValue(float value) { m_MovementInputValue = Mathf.Clamp(value, -1f, 1f) * 0.5f; }
+    public void SetTurningValue(float value) { m_TurnInputValue = Mathf.Clamp(value, -1f, 1f) * 0.5f; }
 }

@@ -46,6 +46,7 @@ public class ShellExplosion : MonoBehaviour
 
         bool hitOtherObjectsThanFriendlyOnes = false;
         bool hitMLTarget = false;
+        bool hitTheMLAgent = false;
         GameObject targetGameObject = null;
 
         // Go through all the colliders...
@@ -56,8 +57,15 @@ public class ShellExplosion : MonoBehaviour
                 continue;
 
             hitOtherObjectsThanFriendlyOnes = true;
+            bool hitTargetOrPlayer = colliders[i].tag.Equals("Target") || colliders[i].tag.Equals("Player");
+            hitTheMLAgent = colliders[i].tag.Equals("Player") && colliders[i].gameObject.GetComponent<PlayerAgent_ShootMovingTarget>() != null;
 
-            if (m_playerAgentShootMoving != null && colliders[i].tag.Equals("Target"))
+            if (hitTargetOrPlayer)
+            {
+                targetGameObject = colliders[i].gameObject; 
+            }
+
+            if (m_playerAgentShootMoving != null && hitTargetOrPlayer)
             {
                 hitMLTarget = true;
                 targetGameObject = colliders[i].gameObject;
@@ -103,6 +111,11 @@ public class ShellExplosion : MonoBehaviour
 
             // Play the explosion sound effect.
             m_ExplosionAudio.Play();
+
+            if (hitTheMLAgent && targetGameObject != null)
+            {
+                targetGameObject.GetComponent<PlayerAgent_ShootMovingTarget>().GetHit();
+            }
 
             if (m_playerAgentShootMoving != null)
             {

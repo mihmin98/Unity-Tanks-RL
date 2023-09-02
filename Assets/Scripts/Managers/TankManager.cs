@@ -120,13 +120,23 @@ public class TankManager
     }
 
    
-    public void SetPlayerAsHuman(int humanId, GlobalAIBlackBox aiGlobalBlackBox)
+    public void SetPlayerAsHuman(int humanId, GlobalAIBlackBox aiGlobalBlackBox, bool setAsMLAgent = false, string behaviourName = "", Unity.Barracuda.NNModel agentModel = null)
     {
         m_PlayerNumber = humanId;
         m_AI = m_Instance.GetComponent<AIBehavior>();
         m_AI.enabled = false;
         m_AI.SetGlobalBlackbox(aiGlobalBlackBox);
         m_AI.m_id = -1;
+
+        if (setAsMLAgent)
+        {
+            m_Instance.name = "Tank Agent";
+            PlayerAgent_ShootMovingTarget agent = m_Instance.AddComponent<PlayerAgent_ShootMovingTarget>();
+            agent.SetupForTankFight(behaviourName, agentModel);
+
+            m_Instance.GetComponent<MoveTo>().enabled = false;
+            m_Instance.GetComponent<AIBehavior_DecisionTree>().enabled = false;
+        }
     }
 
     public void SetPlayerAsAI(int id, GlobalAIBlackBox aiGlobalBlackBox)
